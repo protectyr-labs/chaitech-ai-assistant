@@ -1,99 +1,126 @@
 <div align="center">
 
-<img src="docs/assets/banner.svg" alt="ChaiTech Claude Code Commons" width="100%"/>
+<img src="docs/assets/banner.svg" alt="ChaiTech AI Assistant — a friendly home for founders learning AI" width="100%"/>
 
 </div>
 
-# chaitech-claude-skills-seed
+# ChaiTech AI Assistant
 
-A shared library of Claude Code skills, agents, and templates, seeded by and for ChaiTech Accelerator Cohort 7.
+> A friendly home for ChaiTech founders who want to use AI but do not know where to start.
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-64748b?style=flat-square)](LICENSE)
-[![Status: Seed](https://img.shields.io/badge/status-seed_v0.1-f59e0b?style=flat-square)](#status)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-compatible-34d399?style=flat-square)](https://docs.anthropic.com/en/docs/claude-code)
-[![Contributions: welcome](https://img.shields.io/badge/contributions-welcome-60a5fa?style=flat-square)](CONTRIBUTING.md)
+If you have never touched GitHub, have no idea what "Claude Code" is, and only know that everyone keeps saying you should try AI in your business — you are in exactly the right place. This page was built for you.
 
-Every founder who tried Claude Code for the first time during Cohort 7 left with the same question: where do I find practical skills to install? Until now there was no shared answer. This repository is a starting point. Three seeded flagship skills, a 10-minute extraction guide, and an invitation for cohort members to contribute what they build.
+## Three things you can do here
 
-## Quick start
+### Learn
 
-```bash
-git clone https://github.com/protectyr-labs/chaitech-claude-skills-seed.git
-cd chaitech-claude-skills-seed
+You have never used Claude for your work, and the tutorials online are either too short or written for engineers. Start with our plain-language guides. They explain what Claude is, what it can do for you, and how to install your first helper, with no jargon and no "just run this command" leaps.
 
-# install a skill into your Claude Code config
-cp -r skills/daily-rhythm ~/.claude/skills/
+Jump to: [Where do I start? (for complete beginners)](#where-do-i-start-if-i-have-never-done-this-before)
 
-# or into a specific project
-cp -r skills/daily-rhythm /path/to/your-project/.claude/skills/
-```
+### Use
 
-Then invoke the skill from Claude Code (for example the `/daily-start` command after installing `daily-rhythm`).
+We include three ready-made "helpers" (the technical word is "skills") that cohort founders use in their own work. Each one is two copy-paste steps to install. Pick one, install it, and Claude starts doing that thing for you.
 
-## Architecture
+Jump to: [What is inside today](#what-is-inside-today)
 
-```mermaid
-flowchart LR
-    A["Cohort member<br/><sub>has a skill they use</sub>"]
-    B["Extraction<br/><sub>10-min guide</sub>"]
-    C["Seed repo<br/><sub>skills/ and curated/</sub>"]
-    D["Next cohort<br/><sub>install and build on</sub>"]
-    I["Non-dev idea<br/><sub>issue template</sub>"]
-    S["Steward<br/><sub>packages and PRs</sub>"]
-    A -->|CONTRIBUTING.md| B
-    B -->|pull request| C
-    I -.->|"submit idea"| S
-    S -->|"packages"| C
-    C -->|clone / copy| D
-    style C fill:#1e293b,stroke:#f59e0b,stroke-width:2px,color:#e2e8f0
-    style S fill:#1e293b,stroke:#60a5fa,stroke-width:1.5px,color:#e2e8f0
-    style A fill:#1e293b,stroke:#475569,color:#cbd5e1
-    style B fill:#1e293b,stroke:#475569,color:#cbd5e1
-    style D fill:#1e293b,stroke:#475569,color:#cbd5e1
-    style I fill:#1e293b,stroke:#475569,color:#cbd5e1
-```
+### Ask and share
 
-Two sections live side by side. `skills/` holds original contributions written specifically for this repo. `curated/` links to high-quality skills maintained elsewhere, with credit preserved. See [ARCHITECTURE.md](ARCHITECTURE.md) for the design rationale.
+Have a question you were embarrassed to ask in the group session? Ask it here. Built something small and clever? Share it here. No question is silly. No contribution is too small.
 
-> [!NOTE]
-> This is a seed repository. Three skills are included today. The whole point is for cohort members to add the next thirty.
+- **Ask a question:** [open a Discussion](https://github.com/protectyr-labs/chaitech-ai-assistant/discussions/new?category=q-a) (GitHub account required, free to create)
+- **Share something you built:** see [How to share](CONTRIBUTING.md)
+- **Not sure?** Open any question as a Discussion. Someone will point you to the right place.
 
-## Seeded skills
+---
 
-| Skill | Category | What it does |
-|---|---|---|
-| [`executive-team-template`](skills/executive-team-template/) | Advisory | Eight-persona AI leadership team (CEO, CRO, CMO, CPO, COO, CFO, CS, CINO) with state files and participation rules. Fork for your own advisory board. |
-| [`daily-rhythm`](skills/daily-rhythm/) | Workflow | Three commands that bracket the founder workday: `/daily-start`, `/done`, `/daily-end`. File-based, no external dependencies. |
-| [`multi-project-dashboard`](skills/multi-project-dashboard/) | Visibility | Aggregates state across sibling project directories into one HTML command center with freshness indicators. |
+## What is inside today
 
-## Curated external skills
+Three helpers live here right now. Each one is self-contained, free, and works without you signing up for anything extra.
 
-A small, growing list of Claude Code skills maintained outside this repo that cohort members find useful. See [`curated/`](curated/) for the current list with credit and source links. The first entry is Bryan Altman's [`claude-research-skill`](https://github.com/altmbr/claude-research-skill).
+### Eight friendly advisors for your business
+
+<div align="center">
+<img src="docs/assets/skill-executive-team.svg" alt="Eight advisors around a table" width="85%"/>
+</div>
+
+Imagine asking a Chief Revenue Officer "should I raise my prices?" and getting an answer rooted in your actual numbers, not a generic article. This helper gives you eight AI advisors (CEO, CRO, CMO, CPO, COO, CFO, CS, CINO) that know your business, speak in character, and argue with each other when you need a decision.
+
+→ [See how this works](skills/executive-team-template/)
+
+### Your day, bracketed
+
+<div align="center">
+<img src="docs/assets/skill-daily-rhythm.svg" alt="Morning sun, midday checkmark, evening moon" width="85%"/>
+</div>
+
+Three small commands that shape your workday. In the morning you type `/daily-start` and Claude asks what today's focus is. When you finish something you type `/done` and it logs the win and suggests what to do next. At the end of the day you type `/daily-end` and Claude wraps up and seeds tomorrow.
+
+→ [See how this works](skills/daily-rhythm/)
+
+### All your projects, one view
+
+<div align="center">
+<img src="docs/assets/skill-multi-project-dashboard.svg" alt="A dashboard window showing four project tiles" width="85%"/>
+</div>
+
+If you run more than one business or project at a time, this turns them into a single friendly dashboard. Freshness badges tell you what has been updated recently and what is going stale. Opens in your browser.
+
+→ [See how this works](skills/multi-project-dashboard/)
+
+---
+
+## Where do I start if I have never done this before?
+
+Four gentle steps. Allow yourself an afternoon.
+
+1. **Install Claude Code.** It is free. [Download and install guide from Anthropic.](https://docs.anthropic.com/en/docs/claude-code/overview)
+2. **Pick one helper from above.** We recommend "Your day, bracketed" first. It is the smallest change and you will feel the benefit tomorrow morning.
+3. **Follow the two steps in that helper's page.** Copy, paste, done.
+4. **Come back with a question.** Open a Discussion or ask at the next cohort session. Both are fine.
+
+If any of this feels like it is written in a language you do not speak, [open a Discussion](https://github.com/protectyr-labs/chaitech-ai-assistant/discussions) and say so. We will rewrite the page until it makes sense.
+
+---
+
+## Curated picks from the Claude community
+
+Some of the most useful helpers for Claude were built by people outside our cohort. We point to them here with full credit to their authors. Nothing is duplicated. You install them from wherever their maker put them.
+
+The first one is Bryan Altman's research helper, which turns Claude into a tiny research team that investigates a question for you.
+
+→ [Browse curated picks](curated/)
+
+---
 
 ## How to contribute
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md). The short version: copy a skill you already use from your local Claude Code config, scrub secrets and business specifics, write a short README, open a pull request. Most contributions take ten minutes.
+You do not need to be a coder.
 
-Not a developer? Open an issue using the "Submit a skill idea" template and a steward will help package it.
+- **Built something? Share it.** Even a short prompt you use every day is worth sharing. The [How to share](CONTRIBUTING.md) page walks you through it. Most contributions take ten minutes.
+- **Have a question?** [Open a Discussion.](https://github.com/protectyr-labs/chaitech-ai-assistant/discussions) The community answers faster than you would expect.
+- **Not sure if what you have is worth sharing?** Ask the steward (see below). If it helped you, it will help someone else.
 
-## Design decisions
+---
 
-- **D-01: Two sections, one repo.** Original contributions live in `skills/`. External recommendations live in `curated/` as links with credit. We link rather than republish so authors keep control of their work.
-- **D-02: Permissive licensing by default.** MIT across the repo. Individual contributed skills may declare a different permissive license; non-permissive licenses are rejected.
-- **D-03: File-based examples.** The seeded skills deliberately avoid dependencies on external services. A founder can install and use them without signing up for anything.
-- **D-04: Stewardship model.** One founding steward during Cohort 7 reviews pull requests and keeps the repo tidy. Future cohorts inherit the stewardship role through the program.
-- **D-05: Sanitization is the bar.** Every contribution is scanned for secrets, client names, and private paths before merge. The scanner rejects leaks; the steward verifies context.
+## A note from the steward
 
-## Status
+Hi, I am Sasha Madaniev, a member of ChaiTech Cohort 7 and founder of Protectyr Security. I built this after the first Claude Code session our cohort had.
 
-Version 0.1 seed. Three skills live, contribution pipeline open. The repository is currently hosted under [`protectyr-labs`](https://github.com/protectyr-labs) as interim home. If ChaiTech adopts the project, ownership transfers to a `chaitech` organization; the contributor history and license remain intact.
+Too many of us left that session with the same question, "where do I find practical helpers?", and no shared answer existed. So I started one.
 
-## Origin
+Today it lives on my Protectyr Labs portfolio. If ChaiTech decides to host it under the ChaiTech name, it moves. Either way, it belongs to the cohort founders who use it, contribute to it, and learn from each other through it.
 
-Seeded by Alexander "Sasha" Madaniev, CISSP, during ChaiTech Accelerator Cohort 7 in April 2026. The original flagship skills were extracted from a production solo-founder operations system and sanitized for open source. No client data, no business secrets, fresh git history.
+If something here feels confusing or wrong, tell me. I want this page to be friendly first and technical second.
 
-## Links
+---
 
-- [ARCHITECTURE.md](ARCHITECTURE.md) — design decisions and rationale
-- [CONTRIBUTING.md](CONTRIBUTING.md) — 10-minute extraction guide
-- [LICENSE](LICENSE) — MIT
+## Credits
+
+Bryan Altman, for the session that made this idea obvious, and for the [claude-research-skill](https://github.com/altmbr/claude-research-skill) that is our first curated pick.
+
+ChaiTech Accelerator Cohort 7, for being the kind of cohort where someone can stand up and say "I built a thing, want it?"
+
+## License
+
+MIT. Free to use, free to fork, free to share. See [LICENSE](LICENSE).

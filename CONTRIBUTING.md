@@ -1,123 +1,87 @@
-# Contributing
+# How to share what you built
 
-Anyone in the ChaiTech community can contribute a skill. This guide gets you from "I use this thing in Claude Code every day" to "it's a shareable skill in the repo" in about 10 minutes.
+You do not have to be a coder, a developer, or a GitHub person to share something here. If you built a little thing with Claude that made your week easier, someone else will benefit from it. The only goal of this page is to make sharing feel easy.
 
-## What makes a good skill for this repo
+## Three ways to share
 
-- You actually use it.
-- It solves one clear problem.
-- It does not contain secrets, client data, or anything you wouldn't hand a stranger.
-- It is generic enough that another founder could install it without knowing your business.
+### 1. You have something to share and you know how to use GitHub
 
-## The 10-minute extraction process
+Lovely. Here is the fast path.
 
-### 1. Find the skill you want to share
+1. Fork this repository.
+2. Copy your helper into `skills/<your-helper-name>/`.
+3. Scrub any client names, API keys, or personal folder paths from the files. (See the short checklist below.)
+4. Write a short `README.md` answering the four questions (what, who, how, example).
+5. Open a pull request. A steward reviews for leaks and clarity, then merges.
 
-It is usually already somewhere in your local Claude Code config, for example:
+Total time: usually about ten minutes.
 
-```
-~/.claude/skills/<name>/
-.claude/skills/<name>/   (inside a specific project)
-.claude/commands/<name>.md
-```
+### 2. You have something to share and GitHub looks scary
 
-### 2. Copy it to a working directory
+No problem. Do this instead.
 
-```bash
-cp -r ~/.claude/skills/my-skill ./skills-draft/my-skill
-```
+- Open a [Discussion](https://github.com/protectyr-labs/chaitech-ai-assistant/discussions/new?category=ideas) in the "Ideas" category and paste what you built, or describe it in your own words, or attach a text file.
+- A steward will turn it into a proper helper, credit you as the idea author, and tell you when it is live.
 
-### 3. Scrub secrets and business specifics
+You do not need a GitHub account to read the repo, but you do need one (free) to open a Discussion. Making an account takes two minutes. We promise.
 
-Read every file. Remove:
+### 3. You only have an idea, not a working helper
 
-- Client names, project code names, real revenue figures.
-- API keys, tokens, webhook URLs, SSH hosts.
-- File paths that only exist on your machine.
-- Assumptions about specific tools (for example Jira, PostgreSQL, Stripe) if the skill could work without them.
+Even better in some ways. Open a Discussion in the "Ideas" category and describe:
 
-Replace with generic placeholders like `<your-client>`, `<your-tool>`, `<your-project-root>`.
+- What problem you want Claude to solve for you.
+- How you do it today (by hand, or not at all).
+- Whether you already tried and got stuck.
 
-### 4. Structure the skill directory
+Ideas with that much context turn into helpers quickly.
 
-Most skills in this repo follow this layout:
-
-```
-skills/<name>/
-  SKILL.md        # the Claude Code manifest (frontmatter + body)
-  README.md       # human explanation, install steps, examples
-  (optional) commands/, agents/, state/, templates/
-```
-
-The `SKILL.md` frontmatter should include:
-
-```yaml
 ---
-name: my-skill
-description: |
-  One sentence on what the skill does. Add a second line with when to trigger.
-license: MIT
-compatibility: claude-code
+
+## The short checklist before you share
+
+Before you paste your helper into a pull request or Discussion, read it through once and remove:
+
+- [ ] Client names, company names, project code names.
+- [ ] Real numbers you would not want public (revenue, customer counts, personal salaries).
+- [ ] API keys, tokens, passwords, SSH hosts.
+- [ ] File paths that only exist on your machine (like `/Users/you/...`).
+- [ ] Any reference to a paid service that the helper assumes you have (or mark that dependency as optional).
+
+If in doubt, ask in a Discussion first. A steward will tell you if anything stands out.
+
 ---
-```
 
-### 5. Write the README.md
+## What a good helper looks like
 
-Answer these four questions in order:
+Read an existing helper to see the shape. The "Your day, bracketed" helper is the simplest and cleanest example to copy from:
 
-1. **What does this do?** (two sentences)
-2. **When should I use it?** (bullet list of triggers)
-3. **How do I install it?** (exact commands)
-4. **What's an example run?** (1 short transcript or walkthrough)
+→ [skills/daily-rhythm/](skills/daily-rhythm/)
 
-### 6. Open a pull request
+A good helper has:
 
-```bash
-git clone https://github.com/<owner>/chaitech-claude-skills-seed.git
-cd chaitech-claude-skills-seed
-cp -r ../skills-draft/my-skill skills/
-git checkout -b add-my-skill
-git add skills/my-skill
-git commit -m "Add my-skill"
-git push origin add-my-skill
-```
+- A short `README.md` in plain language (what, who, how, example).
+- A clear list of what the user types and what Claude does.
+- One minimal install path (two copy-paste commands at most).
+- Credit to the original author (you).
 
-Open the PR against `main`. A steward reviews for secrets, scope, and clarity. Usually merged within a few days.
+A good helper avoids:
 
-## Worked example: `daily-rhythm`
+- Jargon without a definition.
+- "Just run this" leaps.
+- Assumptions about what the reader already knows.
 
-The `skills/daily-rhythm/` directory shows what a clean contribution looks like. It started as a Protectyr-internal workflow tied to Jira. The extraction steps applied:
+---
 
-- **Stripped:** Jira CLI calls, Protectyr persona labels, real engagement names, revenue metrics.
-- **Replaced with:** plain-text log file (`daily-log.md`), generic task states (`todo`, `doing`, `done`), and optional hooks you wire up yourself if you want Jira or Linear later.
-- **Kept:** the rhythm itself — morning triage, task completion, end-of-day close.
+## Contribution credit
 
-Compare this with any founder's own morning routine and you see the pattern: pick the structure, leave the business specifics behind.
+Every helper page credits the author by name or handle. Every Discussion-seeded helper credits the idea author. If you want to stay anonymous, say so in the Discussion and we use "anonymous cohort founder."
 
-## Contribution checklist
+---
 
-Before you open a PR, verify:
+## Questions
 
-- [ ] No client names, API keys, or personal paths remain.
-- [ ] `SKILL.md` has valid frontmatter (`name`, `description`, `license`).
-- [ ] `README.md` answers the four questions (what, when, how, example).
-- [ ] `LICENSE` is present in the skill directory if it differs from repo default (MIT).
-- [ ] You actually used this skill in your own work recently.
-
-## Not a developer?
-
-Open an issue using the "Submit a skill idea" template. Describe:
-
-1. What problem you want Claude to solve.
-2. How you currently do it manually.
-3. Whether you want the skill to run in one project or across all of them.
-
-A steward will turn it into a real skill and credit you as the idea author.
-
-## Credit and attribution
-
-Every contribution is credited in the skill's README and repo commit history. If you adapt an external skill, cite the original author. Forking permissive-license skills is welcome with credit; republishing without credit is not.
+Open a [Discussion in the Q and A category](https://github.com/protectyr-labs/chaitech-ai-assistant/discussions/new?category=q-a) and ask. The steward or another cohort member will answer.
 
 ## Steward
 
-Alexander Madaniev, ChaiTech Cohort 7, founding steward during Cohort 7.
+Alexander Madaniev, ChaiTech Cohort 7. Founding steward during Cohort 7.

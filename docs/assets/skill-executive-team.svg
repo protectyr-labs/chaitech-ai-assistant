@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="800" height="220" role="img" aria-label="Executive Team Template — eight friendly AI advisors">
+  <defs>
+    <pattern id="dots-exec" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="0.9" fill="#E8D4A8" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="220" fill="#FDF6E3"/>
+  <rect width="800" height="220" fill="url(#dots-exec)"/>
+
+  <g font-family="'Fredoka', 'Nunito', 'Segoe UI', system-ui, sans-serif">
+    <text x="40" y="62" font-size="28" font-weight="700" fill="#3D3025">Eight friendly advisors</text>
+    <text x="40" y="92" font-size="14" font-weight="500" fill="#6B5847" font-style="italic">CEO, CRO, CMO, CPO, COO, CFO, CS, CINO.</text>
+    <text x="40" y="112" font-size="14" font-weight="500" fill="#6B5847" font-style="italic">They remember your business. They argue.</text>
+    <text x="40" y="132" font-size="14" font-weight="500" fill="#6B5847" font-style="italic">They help you decide.</text>
+    <path d="M 40 142 q 40 4, 80 0 t 80 0" fill="none" stroke="#E8957F" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Round table with 8 little heads around it -->
+  <g transform="translate(560, 110)">
+    <!-- table -->
+    <ellipse cx="0" cy="10" rx="100" ry="30" fill="#F5D77A" stroke="#C9A83F" stroke-width="2"/>
+    <ellipse cx="0" cy="6" rx="100" ry="28" fill="#FDF6E3" stroke="#C9A83F" stroke-width="2"/>
+
+    <!-- 8 little friends around the table -->
+    <!-- top 3 -->
+    <g transform="translate(-70, -55)">
+      <circle cx="0" cy="0" r="16" fill="#E8957F" stroke="#3D3025" stroke-width="1.8"/>
+      <circle cx="-5" cy="-2" r="1.8" fill="#3D3025"/>
+      <circle cx="5" cy="-2" r="1.8" fill="#3D3025"/>
+      <path d="M -4 5 q 4 3, 8 0" fill="none" stroke="#3D3025" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="0" y="28" font-size="9" font-weight="700" fill="#3D3025" text-anchor="middle" font-family="'Fredoka', sans-serif">CEO</text>
+    </g>
+    <g transform="translate(0, -62)">
+      <circle cx="0" cy="0" r="16" fill="#5EBBB3" stroke="#3D3025" stroke-width="1.8"/>
+      <circle cx="-5" cy="-2" r="1.8" fill="#3D3025"/>
+      <circle cx="5" cy="-2" r="1.8" fill="#3D3025"/>
+      <path d="M -4 4 q 4 3, 8 0" fill="none" stroke="#3D3025" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="0" y="28" font-size="9" font-weight="700" fill="#3D3025" text-anchor="middle" font-family="'Fredoka', sans-serif">CRO</text>
+    </g>
+    <g transform="translate(70, -55)">
+      <circle cx="0" cy="0" r="16" fill="#C7A3D9" stroke="#3D3025" stroke-width="1.8"/>
+      <circle cx="-5" cy="-2" r="1.8" fill="#3D3025"/>
+      <circle cx="5" cy="-2" r="1.8" fill="#3D3025"/>
+      <path d="M -4 5 q 4 3, 8 0" fill="none" stroke="#3D3025" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="0" y="28" font-size="9" font-weight="700" fill="#3D3025" text-anchor="middle" font-family="'Fredoka', sans-serif">CMO</text>
+    </g>
+
+    <!-- middle sides -->
+    <g transform="translate(-105, 0)">
+      <circle cx="0" cy="0" r="14" fill="#F5D77A" stroke="#3D3025" stroke-width="1.8"/>
+      <circle cx="-4" cy="-1" r="1.5" fill="#3D3025"/>
+      <circle cx="4" cy="-1" r="1.5" fill="#3D3025"/>
+      <path d="M -3 4 q 3 3, 6 0" fill="none" stroke="#3D3025" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="0" y="26" font-size="8.5" font-weight="700" fill="#3D3025" text-anchor="middle" font-family="'Fredoka', sans-serif">CPO</text>
+    </g>
+    <g transform="translate(105, 0)">
+      <circle cx="0" cy="0" r="14" fill="#E8957F" stroke="#3D3025" stroke-width="1.8"/>
+      <circle cx="-4" cy="-1" r="1.5" fill="#3D3025"/>
+      <circle cx="4" cy="-1" r="1.5" fill="#3D3025"/>
+      <path d="M -3 4 q 3 3, 6 0" fill="none" stroke="#3D3025" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="0" y="26" font-size="8.5" font-weight="700" fill="#3D3025" text-anchor="middle" font-family="'Fredoka', sans-serif">COO</text>
+    </g>
+
+    <!-- bottom 3 -->
+    <g transform="translate(-70, 62)">
+      <circle cx="0" cy="0" r="14" fill="#5EBBB3" stroke="#3D3025" stroke-width="1.8"/>
+      <circle cx="-4" cy="-1" r="1.5" fill="#3D3025"/>
+      <circle cx="4" cy="-1" r="1.5" fill="#3D3025"/>
+      <path d="M -3 4 q 3 3, 6 0" fill="none" stroke="#3D3025" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="0" y="-22" font-size="8.5" font-weight="700" fill="#3D3025" text-anchor="middle" font-family="'Fredoka', sans-serif">CFO</text>
+    </g>
+    <g transform="translate(0, 68)">
+      <circle cx="0" cy="0" r="14" fill="#C7A3D9" stroke="#3D3025" stroke-width="1.8"/>
+      <circle cx="-4" cy="-1" r="1.5" fill="#3D3025"/>
+      <circle cx="4" cy="-1" r="1.5" fill="#3D3025"/>
+      <path d="M -3 4 q 3 3, 6 0" fill="none" stroke="#3D3025" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="0" y="-22" font-size="8.5" font-weight="700" fill="#3D3025" text-anchor="middle" font-family="'Fredoka', sans-serif">CS</text>
+    </g>
+    <g transform="translate(70, 62)">
+      <circle cx="0" cy="0" r="14" fill="#F5D77A" stroke="#3D3025" stroke-width="1.8"/>
+      <circle cx="-4" cy="-1" r="1.5" fill="#3D3025"/>
+      <circle cx="4" cy="-1" r="1.5" fill="#3D3025"/>
+      <path d="M -3 4 q 3 3, 6 0" fill="none" stroke="#3D3025" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="0" y="-22" font-size="8.5" font-weight="700" fill="#3D3025" text-anchor="middle" font-family="'Fredoka', sans-serif">CINO</text>
+    </g>
+
+    <!-- small speech bubble in middle of table -->
+    <g transform="translate(-15, 5)">
+      <path d="M 0 0 Q 0 -6, 6 -6 L 24 -6 Q 30 -6, 30 0 L 30 10 Q 30 16, 24 16 L 12 16 L 8 22 L 8 16 L 6 16 Q 0 16, 0 10 Z" fill="#FFF8ED" stroke="#3D3025" stroke-width="1.5" stroke-linejoin="round"/>
+      <text x="15" y="9" font-size="8" font-weight="700" fill="#3D3025" text-anchor="middle" font-family="'Fredoka', sans-serif">?</text>
+    </g>
+  </g>
+</svg>
