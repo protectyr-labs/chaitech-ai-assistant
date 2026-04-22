@@ -12,6 +12,8 @@ If you have never touched GitHub, have no idea what "Claude Code" is, and only k
 
 ## Three things you can do here
 
+![Learn](https://img.shields.io/badge/Learn-E8957F?style=for-the-badge&labelColor=3D3025) &nbsp; ![Use](https://img.shields.io/badge/Use-F5D77A?style=for-the-badge&labelColor=3D3025) &nbsp; ![Ask_and_Share](https://img.shields.io/badge/Ask_and_Share-C7A3D9?style=for-the-badge&labelColor=3D3025)
+
 ### Learn
 
 You have never used Claude for your work, and the tutorials online are either too short or written for engineers. Start with our plain-language guides. They explain what Claude is, what it can do for you, and how to install your first helper, with no jargon and no "just run this command" leaps.
@@ -20,7 +22,7 @@ Jump to: [Where do I start? (for complete beginners)](#where-do-i-start-if-i-hav
 
 ### Use
 
-We include three ready-made "helpers" (the technical word is "skills") that cohort founders use in their own work. Each one is two copy-paste steps to install. Pick one, install it, and Claude starts doing that thing for you.
+We include four ready-made helpers (the technical word is "skills") that cohort founders use in their own work. Each one is two copy-paste steps to install. Pick one, install it, and Claude starts doing that thing for you.
 
 Jump to: [What is inside today](#what-is-inside-today)
 
@@ -36,9 +38,9 @@ Have a question you were embarrassed to ask in the group session? Ask it here. B
 
 ## What is inside today
 
-Three helpers live here right now. Each one is self-contained, free, and works without you signing up for anything extra.
+Four helpers live here right now. Each one is self-contained, free, and works without you signing up for anything extra.
 
-### Eight friendly advisors for your business
+### ![advisors](https://img.shields.io/badge/Advisors-E8957F?style=flat-square&labelColor=3D3025) &nbsp; Eight friendly advisors for your business
 
 <div align="center">
 <img src="docs/assets/skill-executive-team.svg" alt="Eight advisors around a table" width="85%"/>
@@ -48,7 +50,7 @@ Imagine asking a Chief Revenue Officer "should I raise my prices?" and getting a
 
 → [See how this works](skills/executive-team-template/)
 
-### Your day, bracketed
+### ![rhythm](https://img.shields.io/badge/Rhythm-5EBBB3?style=flat-square&labelColor=3D3025) &nbsp; Your day, bracketed
 
 <div align="center">
 <img src="docs/assets/skill-daily-rhythm.svg" alt="Morning sun, midday checkmark, evening moon" width="85%"/>
@@ -58,7 +60,7 @@ Three small commands that shape your workday. In the morning you type `/daily-st
 
 → [See how this works](skills/daily-rhythm/)
 
-### All your projects, one view
+### ![dashboard](https://img.shields.io/badge/Dashboard-C7A3D9?style=flat-square&labelColor=3D3025) &nbsp; All your projects, one view
 
 <div align="center">
 <img src="docs/assets/skill-multi-project-dashboard.svg" alt="A dashboard window showing four project tiles" width="85%"/>
@@ -67,6 +69,16 @@ Three small commands that shape your workday. In the morning you type `/daily-st
 If you run more than one business or project at a time, this turns them into a single friendly dashboard. Freshness badges tell you what has been updated recently and what is going stale. Opens in your browser.
 
 → [See how this works](skills/multi-project-dashboard/)
+
+### ![security](https://img.shields.io/badge/Security-5EBBB3?style=flat-square&labelColor=3D3025) &nbsp; Check before you push
+
+<div align="center">
+<img src="docs/assets/skill-secure-before-push.svg" alt="A friendly shield holding a magnifying glass, surrounded by security checks" width="85%"/>
+</div>
+
+Right before you push your code to GitHub, this helper reviews your pending changes and tells you what would break, what would leak, and what would make a future audit painful. It checks for the OWASP Top 10, hardcoded secrets, and SOC 2 relevance markers. Catches mistakes before they become public.
+
+→ [See how this works](skills/secure-before-push/)
 
 ---
 
@@ -87,9 +99,9 @@ If any of this feels like it is written in a language you do not speak, [open a 
 
 Some of the most useful helpers for Claude were built by people outside our cohort. We point to them here with full credit to their authors. Nothing is duplicated. You install them from wherever their maker put them.
 
-The first one is Bryan Altman's research helper, which turns Claude into a tiny research team that investigates a question for you.
+Five hand-picked skills live there now, covering research, workflow discipline, making your own skills, video production, and document generation.
 
-→ [Browse curated picks](curated/)
+→ [Browse all five curated picks](curated/)
 
 ---
 
@@ -118,6 +130,10 @@ If something here feels confusing or wrong, tell me. I want this page to be frie
 ## Credits
 
 Bryan Altman, for the session that made this idea obvious, and for the [claude-research-skill](https://github.com/altmbr/claude-research-skill) that is our first curated pick.
+
+TÂCHES and the GSD community, for a workflow framework that sets the bar for what a Claude Code project can look like.
+
+Anthropic, for the [official plugins](https://github.com/anthropics/claude-plugins-official) and the [public Agent Skills repo](https://github.com/anthropics/skills) that make everything else possible.
 
 ChaiTech Accelerator Cohort 7, for being the kind of cohort where someone can stand up and say "I built a thing, want it?"
 

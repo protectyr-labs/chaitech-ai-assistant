@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" width="1200" height="200" role="img" aria-label="Curated picks — five hand-picked Claude skills worth your time">
+  <defs>
+    <pattern id="dots-cur" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#E8D4A8" opacity="0.35"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="200" fill="#FDF6E3"/>
+  <rect width="1200" height="200" fill="url(#dots-cur)"/>
+
+  <!-- Left: typography -->
+  <g font-family="'Fredoka', 'Nunito', 'Segoe UI', system-ui, sans-serif">
+    <text x="60" y="70" font-size="34" font-weight="700" fill="#3D3025" letter-spacing="-0.3">Curated picks</text>
+    <text x="60" y="102" font-size="15" font-weight="500" fill="#6B5847" font-style="italic">Five hand-picked Claude skills from</text>
+    <text x="60" y="124" font-size="15" font-weight="500" fill="#6B5847" font-style="italic">the wider community. Installed from the</text>
+    <text x="60" y="146" font-size="15" font-weight="500" fill="#6B5847" font-style="italic">source. Credit stays with the maker.</text>
+    <path d="M 60 154 q 40 4, 80 0 t 80 0" fill="none" stroke="#C7A3D9" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Right: 5 little "gems" or medals on a shelf, each a different color -->
+  <!-- shelf line -->
+  <path d="M 610 150 L 1150 150" stroke="#8B7360" stroke-width="2" stroke-linecap="round" stroke-dasharray="6,5"/>
+
+  <!-- gem 1: Research (coral) -->
+  <g transform="translate(660, 105)">
+    <path d="M -22 0 L -14 -22 L 14 -22 L 22 0 L 0 26 Z" fill="#E8957F" stroke="#C66E52" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M -22 0 L 22 0 M -14 -22 L 0 0 L 14 -22" fill="none" stroke="#FFF8ED" stroke-width="1.5" stroke-linejoin="round" opacity="0.85"/>
+    <text x="0" y="48" font-size="10" font-weight="700" fill="#3D3025" text-anchor="middle" font-family="'Fredoka', sans-serif">research</text>
+  </g>
+  <!-- gem 2: Workflow (teal) -->
+  <g transform="translate(760, 100)">
+    <path d="M -22 0 L -14 -22 L 14 -22 L 22 0 L 0 26 Z" fill="#5EBBB3" stroke="#3D8A84" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M -22 0 L 22 0 M -14 -22 L 0 0 L 14 -22" fill="none" stroke="#FFF8ED" stroke-width="1.5" stroke-linejoin="round" opacity="0.85"/>
+    <text x="0" y="48" font-size="10" font-weight="700" fill="#3D3025" text-anchor="middle" font-family="'Fredoka', sans-serif">workflow</text>
+  </g>
+  <!-- gem 3: Make skills (yellow) -->
+  <g transform="translate(860, 103)">
+    <path d="M -22 0 L -14 -22 L 14 -22 L 22 0 L 0 26 Z" fill="#F5D77A" stroke="#C9A83F" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M -22 0 L 22 0 M -14 -22 L 0 0 L 14 -22" fill="none" stroke="#8B6914" stroke-width="1.5" stroke-linejoin="round" opacity="0.85"/>
+    <text x="0" y="48" font-size="10" font-weight="700" fill="#3D3025" text-anchor="middle" font-family="'Fredoka', sans-serif">make skills</text>
+  </g>
+  <!-- gem 4: Video (mauve) -->
+  <g transform="translate(960, 100)">
+    <path d="M -22 0 L -14 -22 L 14 -22 L 22 0 L 0 26 Z" fill="#C7A3D9" stroke="#8F6BA5" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M -22 0 L 22 0 M -14 -22 L 0 0 L 14 -22" fill="none" stroke="#FFF8ED" stroke-width="1.5" stroke-linejoin="round" opacity="0.85"/>
+    <text x="0" y="48" font-size="10" font-weight="700" fill="#3D3025" text-anchor="middle" font-family="'Fredoka', sans-serif">video</text>
+  </g>
+  <!-- gem 5: Documents (coral-2) -->
+  <g transform="translate(1060, 105)">
+    <path d="M -22 0 L -14 -22 L 14 -22 L 22 0 L 0 26 Z" fill="#E8957F" stroke="#C66E52" stroke-width="2" stroke-linejoin="round" opacity="0.85"/>
+    <path d="M -22 0 L 22 0 M -14 -22 L 0 0 L 14 -22" fill="none" stroke="#FFF8ED" stroke-width="1.5" stroke-linejoin="round" opacity="0.85"/>
+    <text x="0" y="48" font-size="10" font-weight="700" fill="#3D3025" text-anchor="middle" font-family="'Fredoka', sans-serif">documents</text>
+  </g>
+
+  <!-- decorative sparkles around gems -->
+  <g transform="translate(710, 75)">
+    <path d="M 0 -5 L 1.2 -1.5 L 5 -1 L 2.2 1.5 L 3 5 L 0 3.5 L -3 5 L -2.2 1.5 L -5 -1 L -1.2 -1.5 Z" fill="#F5D77A"/>
+  </g>
+  <g transform="translate(920, 78)">
+    <path d="M 0 -5 L 1.2 -1.5 L 5 -1 L 2.2 1.5 L 3 5 L 0 3.5 L -3 5 L -2.2 1.5 L -5 -1 L -1.2 -1.5 Z" fill="#5EBBB3"/>
+  </g>
+  <g transform="translate(1110, 72)">
+    <path d="M 0 -5 L 1.2 -1.5 L 5 -1 L 2.2 1.5 L 3 5 L 0 3.5 L -3 5 L -2.2 1.5 L -5 -1 L -1.2 -1.5 Z" fill="#C7A3D9"/>
+  </g>
+</svg>
