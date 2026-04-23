@@ -95,6 +95,16 @@ If any of this feels like it is written in a language you do not speak, [open a 
 
 ---
 
+## Resources (workbooks, templates, things you can print)
+
+Not every useful thing is a Claude Code skill. Some are workbooks, templates, or printables that help you do the work of building a startup. Those live in `resources/`.
+
+- [Discovery Interview Workbook](resources/discovery-interview-workbook/) — printable HTML companion for Rob Kenedi's 40-interview customer discovery challenge. Verbatim script, branching scenarios for when calls go off-rails, pre-call briefing template, quick reference cards. Open in a browser, print for use during real calls.
+
+→ [Browse all resources](resources/)
+
+---
+
 ## Curated picks from the Claude community
 
 Some of the most useful helpers for Claude were built by people outside our cohort. We point to them here with full credit to their authors. Nothing is duplicated. You install them from wherever their maker put them.

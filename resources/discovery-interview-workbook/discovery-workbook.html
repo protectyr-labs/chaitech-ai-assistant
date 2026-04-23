@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Discovery Interview Workbook — ChaiTech Cohort Edition</title>
+<style>
+  @page { size: Letter; margin: 14mm; }
+  html, body { margin: 0; padding: 0; background: #f7f9fb; color: #0f2626; font-family: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif; font-size: 10.5pt; line-height: 1.55; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 10mm 8mm; }
+  header { display: flex; align-items: center; gap: 14px; border-bottom: 3px solid #004c4c; padding-bottom: 10px; margin-bottom: 12px; }
+  header img { height: 44px; width: 44px; }
+  header .brand { font-weight: 700; font-size: 12pt; color: #004c4c; letter-spacing: 0.5px; }
+  header .meta { margin-left: auto; text-align: right; font-size: 9pt; color: #5b7575; }
+  h1 { color: #004c4c; font-size: 18pt; margin: 2px 0 0 0; font-weight: 800; }
+  h2 { color: #004c4c; font-size: 14pt; margin: 18px 0 6px 0; padding-bottom: 4px; border-bottom: 2px solid #00a3a3; font-weight: 700; }
+  h3 { color: #0f3a3a; font-size: 12pt; margin: 16px 0 4px 0; font-weight: 700; }
+  h4 { color: #004c4c; font-size: 11pt; margin: 12px 0 4px 0; font-weight: 700; }
+  p { margin: 5px 0; }
+  strong { color: #004c4c; }
+  ul, ol { margin: 4px 0; padding-left: 22px; }
+  li { margin: 3px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin: 8px 0; }
+  th { background: #004c4c; color: #e8fbfb; padding: 6px 8px; text-align: left; font-weight: 600; }
+  td { padding: 6px 8px; border-bottom: 1px solid #e1ebeb; vertical-align: top; }
+  tr:nth-child(even) td { background: #fafcfc; }
+  code, .placeholder { background: #fdf8e8; padding: 1px 6px; border-radius: 2px; font-size: 9.5pt; color: #8a6400; font-family: "Consolas", "Menlo", monospace; font-weight: 600; }
+  .callout { background: #ecf7f7; border-left: 4px solid #00a3a3; padding: 10px 14px; margin: 10px 0; border-radius: 2px; }
+  .warn { background: #fdf8e8; border-left: 4px solid #b58900; padding: 10px 14px; margin: 10px 0; border-radius: 2px; }
+  .warn strong { color: #8a6400; }
+  .ok { background: #ecf7e8; border-left: 4px solid #4a8b3a; padding: 8px 12px; margin: 6px 0; border-radius: 2px; font-size: 10pt; }
+  .ok strong { color: #2d5e1f; }
+  .bad { background: #fbeae9; border-left: 4px solid #c44a3a; padding: 8px 12px; margin: 6px 0; border-radius: 2px; font-size: 10pt; }
+  .bad strong { color: #8b2f25; }
+  .next { background: #f0e8f5; border-left: 4px solid #5b4a75; padding: 8px 12px; margin: 6px 0; border-radius: 2px; font-size: 10pt; }
+  .next strong { color: #3d2a55; }
+  .say { background: #ffffff; border: 2px solid #00a3a3; padding: 12px 16px; border-radius: 4px; margin: 8px 0; font-size: 10.5pt; line-height: 1.6; color: #0f2626; }
+  .say::before { content: "SAY THIS:"; display: block; font-size: 8.5pt; font-weight: 700; color: #00a3a3; letter-spacing: 1px; margin-bottom: 6px; }
+  .pause { background: #fff3e0; border: 1px dashed #b58900; padding: 6px 10px; border-radius: 2px; margin: 6px 0; font-size: 9.5pt; font-style: italic; color: #5a4a1a; }
+  .pause::before { content: "[PAUSE / ACTION] "; font-weight: 700; font-style: normal; color: #b58900; }
+  .quote { background: #ffffff; border: 1px solid #cfdcdc; padding: 10px 14px; border-radius: 3px; margin: 8px 0; font-style: italic; color: #254545; }
+  .mantra { background: #004c4c; color: #e8fbfb; padding: 12px 16px; border-radius: 3px; font-weight: 600; margin: 10px 0; text-align: center; font-size: 11.5pt; }
+  .mantra .accent { color: #00e5e5; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .card { border: 1px solid #cfdcdc; background: #ffffff; padding: 10px 12px; border-radius: 4px; page-break-inside: avoid; }
+  .card h4 { margin-top: 0; }
+  .badge { display: inline-block; font-size: 9pt; background: #004c4c; color: #e8fbfb; padding: 2px 8px; border-radius: 10px; margin-right: 4px; font-weight: 600; }
+  .timing { font-size: 9pt; color: #5b7575; font-weight: 600; letter-spacing: 0.3px; }
+  .author { background: linear-gradient(135deg, #004c4c, #00a3a3); color: #e8fbfb; padding: 14px 18px; border-radius: 4px; margin: 12px 0; }
+  .author a { color: #00e5e5; text-decoration: underline; }
+  .author h4 { color: #e8fbfb; margin-top: 0; }
+
+  /* TABS */
+  .tabs { margin: 16px 0; }
+  .tabs input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+  .tabnav { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 2px solid #004c4c; padding-bottom: 0; margin-bottom: 0; }
+  .tabnav label { padding: 8px 14px; background: #d9e6e6; color: #004c4c; cursor: pointer; border-radius: 4px 4px 0 0; font-weight: 600; font-size: 10pt; user-select: none; transition: background 0.15s; }
+  .tabnav label:hover { background: #c4dada; }
+  .panels { padding: 16px 4px; background: #ffffff; border: 1px solid #cfdcdc; border-top: none; border-radius: 0 0 4px 4px; }
+  .panel { display: none; }
+  #t1:checked ~ .panels .p1,
+  #t2:checked ~ .panels .p2,
+  #t3:checked ~ .panels .p3,
+  #t4:checked ~ .panels .p4,
+  #t5:checked ~ .panels .p5,
+  #t6:checked ~ .panels .p6 { display: block; }
+  #t1:checked ~ .tabnav label[for="t1"],
+  #t2:checked ~ .tabnav label[for="t2"],
+  #t3:checked ~ .tabnav label[for="t3"],
+  #t4:checked ~ .tabnav label[for="t4"],
+  #t5:checked ~ .tabnav label[for="t5"],
+  #t6:checked ~ .tabnav label[for="t6"] { background: #004c4c; color: #e8fbfb; }
+
+  /* Dropdowns */
+  details { background: #fafcfc; border: 1px solid #cfdcdc; padding: 0; border-radius: 4px; margin: 6px 0; page-break-inside: avoid; }
+  details > summary { padding: 8px 14px; cursor: pointer; font-weight: 600; color: #004c4c; background: #ecf7f7; border-radius: 4px 4px 0 0; user-select: none; list-style-position: outside; }
+  details[open] > summary { border-bottom: 1px solid #cfdcdc; }
+  details > summary:hover { background: #d9eeee; }
+  details > .dcontent { padding: 10px 14px; }
+
+  .pagebreak { page-break-before: always; }
+  footer { margin-top: 16px; padding-top: 8px; border-top: 1px solid #c9d8d8; font-size: 9pt; color: #5b7575; display: flex; justify-content: space-between; }
+
+  @media print {
+    body { background: #fff; }
+    .wrap { padding: 0; }
+    .tabnav { display: none !important; }
+    .panel { display: block !important; page-break-before: always; }
+    details > .dcontent { display: block !important; }
+    summary::-webkit-details-marker { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="assets/protectyr-circle.png" alt="Protectyr">
+  <div>
+    <div class="brand">PROTECTYR SECURITY INC.</div>
+    <h1>Discovery Interview Workbook — Cohort Edition</h1>
+  </div>
+  <div class="meta">
+    Built by Sasha (Protectyr)<br>
+    Shared with ChaiTech Cohort 7<br>
+    Customize for your business
+  </div>
+</header>
+
+<div class="callout">
+<strong>Hello cohort.</strong> I built this workbook for myself after Rob Kenedi's customer discovery masterclass and figured the rest of you might find it useful. Everything Protectyr-specific is sanitized — wherever you see <span class="placeholder">[YOUR PRODUCT]</span> or <span class="placeholder">[YOUR INDUSTRY]</span>, fill in your own context. The framework is Rob's. The structure and scripts are mine. Use freely, adapt aggressively, share back if you improve it.
+</div>
+
+<div class="author">
+<h4>Source and credit</h4>
+<p><strong>Customer discovery framework:</strong> Rob Kenedi (Decelerator), from his January 2026 / April 2026 ChaiTech masterclass. Vitamins / painkillers / gaping neck wounds, the 4 key questions, the 8-persona model, the 15% talk rule, "position yourself as a researcher" — all Rob.</p>
+<p><strong>Script and branching scenarios:</strong> Drafted by Sasha Madaniev, CISSP (Protectyr Security). Adapted from <em>The Mom Test</em> (Rob Fitzpatrick) and Challenger Sale practices.</p>
+<p><strong>License:</strong> Free to use and modify. Attribution appreciated, not required. If you ship a useful improvement, consider sharing back so the cohort compounds the work.</p>
+</div>
+
+<div class="tabs">
+  <input type="radio" name="t" id="t1" checked>
+  <input type="radio" name="t" id="t2">
+  <input type="radio" name="t" id="t3">
+  <input type="radio" name="t" id="t4">
+  <input type="radio" name="t" id="t5">
+  <input type="radio" name="t" id="t6">
+
+  <div class="tabnav">
+    <label for="t1">1. Overview &amp; Flow</label>
+    <label for="t2">2. The Verbatim Script</label>
+    <label for="t3">3. Branching (If They Say...)</label>
+    <label for="t4">4. Pre-Call Briefings</label>
+    <label for="t5">5. Build Your Top 50</label>
+    <label for="t6">6. Quick Reference</label>
+  </div>
+
+  <div class="panels">
+
+  <!-- ========================================================== -->
+  <!-- TAB 1: OVERVIEW & FLOW                                     -->
+  <!-- ========================================================== -->
+  <section class="panel p1">
+
+    <h2>How to use this workbook</h2>
+    <p>This is a print-friendly customer discovery interview workbook built around Rob Kenedi's framework. The 8-section flow, the 4 key questions, and the 15% talk rule are universal. The product-specific examples are mine; you replace them with yours.</p>
+
+    <h3>What you need to customize</h3>
+    <p>Anywhere you see one of these placeholders, fill in your own:</p>
+    <ul>
+      <li><span class="placeholder">[YOUR PRODUCT]</span> — what you actually sell or are building.</li>
+      <li><span class="placeholder">[YOUR ROLE]</span> — your title and elevator pitch (e.g., "founder of [company]").</li>
+      <li><span class="placeholder">[YOUR INDUSTRY / DOMAIN]</span> — the world your buyer lives in.</li>
+      <li><span class="placeholder">[YOUR ICP]</span> — your ideal customer profile.</li>
+      <li><span class="placeholder">[YOUR PRIMARY PAIN]</span> — the specific pain your product solves.</li>
+      <li><span class="placeholder">[YOUR COMPETITORS / COMPLEMENTS]</span> — tools or services your prospects already use.</li>
+    </ul>
+
+    <p>Read tab by tab. Print the verbatim script (tab 2) and the quick reference cards (tab 6). Keep the branching tab (tab 3) open on a second screen during real calls.</p>
+
+    <div class="mantra">
+      "Talk less than <span class="accent">15 percent</span>. Look for <span class="accent">gaping neck wounds</span>, not vitamins. Position yourself as a <span class="accent">researcher</span>."
+      <div style="font-size: 9.5pt; font-weight: 400; margin-top: 6px;">— Rob Kenedi (Decelerator)</div>
+    </div>
+
+    <h2>The 8-section, 30-minute call flow</h2>
+    <table>
+      <thead><tr><th style="width:6%">#</th><th style="width:22%">Section</th><th style="width:14%">Time</th><th style="width:10%">You talk</th><th>What happens</th></tr></thead>
+      <tbody>
+        <tr><td>0</td><td>Before the call</td><td>2 min before</td><td>—</td><td>Recording on. Prospect briefing read. LinkedIn open.</td></tr>
+        <tr><td>1</td><td>Opening</td><td>0 to 2 min</td><td>90%</td><td>Consent on recording. State "this is not a sales call."</td></tr>
+        <tr><td>2</td><td>Context</td><td>2 to 5 min</td><td>25%</td><td>Their role, their world, who else makes decisions.</td></tr>
+        <tr><td>3</td><td><strong>Pain Discovery</strong></td><td>5 to 17 min</td><td><strong>10%</strong></td><td>Rob's 4 questions. The longest section.</td></tr>
+        <tr><td>4</td><td>Current state</td><td>17 to 22 min</td><td>20%</td><td>Quantify dollars, hours, frequency.</td></tr>
+        <tr><td>5</td><td>Solution framing</td><td>22 to 25 min</td><td>60%</td><td>3 sentences on what you do. Listen for push-back.</td></tr>
+        <tr><td>6</td><td>Stakeholder map</td><td>25 to 28 min</td><td>25%</td><td>Surface the 8 personas, especially Saboteur.</td></tr>
+        <tr><td>7</td><td>Close + referral</td><td>28 to 30 min</td><td>80%</td><td>Referral ask. Leave-behind. No follow-up book.</td></tr>
+        <tr><td>8</td><td>After the call</td><td>next 10 min</td><td>—</td><td>Notes. Thank-you email.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>The 3 discipline rules (memorize)</h2>
+    <ol>
+      <li><strong>Talk less than 15% of the call.</strong> If you are speaking, you are not learning.</li>
+      <li><strong>Position yourself as a researcher</strong>, not a seller. Drop "we offer" or "we provide" from your vocabulary during this call.</li>
+      <li><strong>Look for gaping neck wounds</strong> (urgent, must-fix-now pain), not vitamins (nice-to-have).</li>
+    </ol>
+
+    <h2>The 3 levels of pain (Rob's vocabulary)</h2>
+    <div class="grid3">
+      <div class="card">
+        <h4>Vitamin</h4>
+        <p>Nice to have. Prospects say they want it. They will not buy. Conversation is polite but goes nowhere.</p>
+      </div>
+      <div class="card">
+        <h4>Painkiller</h4>
+        <p>Real pain. Prospects will pay to make it stop. Budget exists, even if hidden.</p>
+      </div>
+      <div class="card">
+        <h4>Gaping neck wound</h4>
+        <p>Urgent, must-fix-now. Prospects will pay a lot, immediately. This is your target.</p>
+      </div>
+    </div>
+    <p class="small">Q4 (the magic wand question) is your magnitude probe. Quantify in dollars or hours.</p>
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- TAB 2: THE VERBATIM SCRIPT                                 -->
+  <!-- ========================================================== -->
+  <section class="panel p2">
+
+    <h2>The verbatim script</h2>
+    <p>Every line you say is written out. Fill in placeholders with your specifics. Treat everything else as the default phrasing.</p>
+
+    <h3>Section 1 — Opening (0 to 2 min)</h3>
+    <div class="timing">YOU TALK 90%. The only section where you do most of the talking.</div>
+
+    <div class="say">"Hi [first name], thanks for taking the time today. Before we get into it, two quick housekeeping things."</div>
+    <div class="pause">Pause one second. Smile.</div>
+    <div class="say">"First, would you be okay if I record our conversation? I find that I take much better notes when I am not typing during the call. Nothing leaves my own notes."</div>
+    <div class="pause">Wait for explicit verbal answer. Do not start recording until they say yes.</div>
+
+    <details>
+      <summary>If they say YES to recording (most common)</summary>
+      <div class="dcontent">
+        <div class="say">"Great, thank you. I am starting it now."</div>
+        <div class="pause">Click record. Confirm visible "recording" indicator.</div>
+        <div class="say">"Second thing, I want to be transparent up front. This is not a sales call. I am running a research program where I am talking to 40 [YOUR ICP — e.g., founders / CFOs / IT leaders / etc.] to understand how [YOUR PRIMARY PAIN AREA] actually shows up in their business. I am not going to pitch you anything today. If something I do turns out to be useful to you afterwards, we can have that as a separate conversation. Sound good?"</div>
+        <div class="pause">Wait for "yes" or "okay." Move to Section 2.</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>If they say NO to recording</summary>
+      <div class="dcontent">
+        <div class="say">"No problem at all, I get it. I will take notes by hand. Same promise on confidentiality, nothing leaves my notes."</div>
+        <div class="pause">Open a notebook. Resign yourself to slower note-taking.</div>
+        <div class="say">"Quick second thing, just to set expectations. This is not a sales call. I am running a research program where I am talking to 40 [YOUR ICP] about [YOUR PRIMARY PAIN AREA]. I am not going to pitch you anything. Sound good?"</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>If they ask "what is this for? are you trying to sell me?"</summary>
+      <div class="dcontent">
+        <div class="say">"Fair question. I am [YOUR ROLE] running [YOUR COMPANY]. We do [YOUR ONE-SENTENCE WHAT-WE-DO]. I am at a stage where I am trying to understand the market better, so I am running 40 research interviews. Today, I am literally just listening. If at the end you want to hear about what I do, I will tell you. If not, no follow-up. Either way, I learn something."</div>
+      </div>
+    </details>
+
+    <h3>Section 2 — Context (2 to 5 min)</h3>
+    <div class="timing">YOU TALK 25%. Light fact-finding.</div>
+
+    <div class="say">"So tell me a bit about your role. How long have you been at [Company], and what does your week typically look like? I am especially curious about [YOUR DOMAIN] because that is where my work lives."</div>
+    <div class="pause">Listen. Note their tenure, formal remit, who else touches your problem area.</div>
+
+    <h3>Section 3 — Pain Discovery (5 to 17 min) — Rob's 4 key questions</h3>
+    <div class="timing">YOU TALK 10%. The longest section. Listen hard. Follow tributaries.</div>
+
+    <h4>Q1 — The concrete story</h4>
+    <div class="say">"Walk me through the last time you faced [YOUR PRIMARY PAIN] — something where you stopped and thought, this is not routine."</div>
+    <p class="small"><em>Why this question:</em> asks for a specific memory. Specific memories produce truthful data. Opinions produce socially-acceptable answers.</p>
+
+    <details>
+      <summary>If they go blank ("nothing comes to mind")</summary>
+      <div class="dcontent">
+        <div class="say">"Fair enough, that is actually useful data. Let me ask it differently: what is the most annoying thing in [YOUR DOMAIN] that has landed on your team in the last six months? Even something small."</div>
+        <p class="small">If still blank after the second prompt, they likely do not feel acute pain. Move to Q3 to map the org and Q4 to gauge if there is latent magnitude.</p>
+      </div>
+    </details>
+
+    <h4>Q2 — What they tried</h4>
+    <div class="say">"What have you done to solve it? What happened?"</div>
+    <p class="small"><em>Why:</em> uncovers current solutions, workarounds, and the unmet gap.</p>
+
+    <details>
+      <summary>Listen for: existing solutions and tools</summary>
+      <div class="dcontent">
+        <p>If they mention a vendor, an internal team, or a DIY workaround, probe:</p>
+        <div class="say">"How is that working out? What is it covering well, and what is it not covering?"</div>
+        <p class="small">Their answer maps the gap your product might fill — or confirms it would not.</p>
+      </div>
+    </details>
+
+    <h4>Q3 — Who else cares</h4>
+    <div class="say">"Who else is affected by this problem?"</div>
+    <p class="small"><em>Why:</em> maps the stakeholder ecosystem. Surfaces other Champions, Influencers, and the Decision Maker.</p>
+
+    <h4>Q4 — The magic wand (the magnitude question)</h4>
+    <div class="say">"If this problem disappeared tomorrow, what would change for you?"</div>
+    <p class="small"><em>Why:</em> separates vitamins from painkillers from gaping neck wounds. Force the quantification.</p>
+
+    <details>
+      <summary>If they give a quantified answer (gaping neck wound signal)</summary>
+      <div class="dcontent">
+        <p>Examples of strong answers (across industries):</p>
+        <ul>
+          <li>"I would not lose 5 hours a week to this."</li>
+          <li>"My team could finally do strategic work."</li>
+          <li>"The board would stop asking about it."</li>
+          <li>"We would not lose deals because of it."</li>
+        </ul>
+        <div class="say">"That is helpful. Can you put a rough dollar figure on what that would be worth to you in a year?"</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>If they say "it would be nice" (vitamin)</summary>
+      <div class="dcontent">
+        <div class="say">"Okay. What would the breathing room let you do that you cannot do today?"</div>
+        <p class="small">If still vague, mark them as vitamin-level and move on. Not every prospect is a fit.</p>
+      </div>
+    </details>
+
+    <h3>Section 4 — Current state and magnitude (17 to 22 min)</h3>
+    <div class="timing">YOU TALK 20%.</div>
+
+    <div class="say">"Today, what is your team actually spending on this? In hours, in tools, in external help — even rough numbers help me."</div>
+    <div class="pause">Wait. Be comfortable with silence.</div>
+    <div class="say">"And who in the company actually does this work? You, an internal hire, an external vendor?"</div>
+    <div class="say">"What would make this 10 percent better for you? And what would make it 10 percent worse?"</div>
+    <div class="pause">When they give you a number, repeat it back: "So you are spending about [X] a year on this. Did I get that right?"</div>
+
+    <h3>Section 5 — Solution framing (22 to 25 min)</h3>
+    <div class="timing">YOU TALK 60%. Brief. Optional. Never a pitch.</div>
+
+    <div class="pause">Only enter Section 5 if it feels natural. Skip it if they are watching the clock.</div>
+
+    <div class="say">"Let me describe roughly what we do, and you can tell me where it fits or does not. Sound okay?"</div>
+    <div class="pause">If they say yes:</div>
+    <div class="say">"[YOUR 3-SENTENCE PRODUCT DESCRIPTION. Frame as a category and a differentiator, not a feature list. Example structure: We do [category] for [ICP]. Our differentiator is [one specific thing]. We are also [building / planning] [adjacent thing]. That is it.] Does anything you just told me connect to that, or not really?"</div>
+
+    <details>
+      <summary>If they push back ("we have [competitor] already")</summary>
+      <div class="dcontent">
+        <div class="say">"Great, those are real tools. What I do [sits on top of / is different from / complements] them — I help [specific gap]. Does that gap exist for you, or is your team handling it well?"</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>If they ask "how much does it cost?"</summary>
+      <div class="dcontent">
+        <div class="say">"Honest answer: I am not going to quote you on this call. I want to think through your specific situation and come back with something that fits. For today, I am just trying to learn. Is that okay?"</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>If they ask "can you show me a demo?"</summary>
+      <div class="dcontent">
+        <div class="say">"Yes, absolutely — but not on this call. Today is for me to listen. If after I send you a one-pager you want a demo, I will set that up as its own conversation."</div>
+      </div>
+    </details>
+
+    <h3>Section 6 — Stakeholder mapping (25 to 28 min)</h3>
+    <div class="timing">YOU TALK 25%. Surface the 8 personas. Probe Saboteur explicitly.</div>
+
+    <div class="say">"If you wanted to bring something like what I described into [Company], who else would be part of that decision?"</div>
+    <div class="say">"Who would be most excited about it?" <span class="small">(your Champion candidate)</span></div>
+    <div class="say">"Who would push back the hardest, even if it was a good idea?" <span class="small">(your Saboteur surface)</span></div>
+    <div class="say">"Who actually approves the spend?"</div>
+    <div class="say">"Last question on this: is there anyone whose work might actually shift if you brought in something like this — someone who has to live with it day to day?"</div>
+
+    <h3>Section 7 — Close and referral (28 to 30 min)</h3>
+    <div class="timing">YOU TALK 80%. Two asks. Stop.</div>
+
+    <div class="say">"This was really useful, thank you. Two quick things before I let you go."</div>
+    <div class="pause">Pause one second.</div>
+    <div class="say">"First, who else in your network do you think I should talk to as part of this research? I am trying to get to 40 conversations and quality intros are worth way more than cold outreach. Anyone come to mind?"</div>
+    <div class="say">"Second, would it be useful if I sent you a short one-pager on what we do, just so you have it if it ever becomes relevant?"</div>
+    <div class="say">"Thank you again. Really appreciate the time."</div>
+
+    <h3>Section 8 — After the call (next 10 min)</h3>
+    <div class="timing">SOLO. Do this immediately.</div>
+
+    <ol>
+      <li>Stop the recording. Confirm it captured.</li>
+      <li>Open your CRM (or spreadsheet) and update the row for this prospect.</li>
+      <li>Set: pain level (vitamin / painkiller / gaping_neck_wound), validated_pain (yes/no), validated_product (yes/no), willingness_to_pay (none / maybe / yes), saboteur_risk (low / medium / high).</li>
+      <li>Notes: one quote, the real pain (your inference), the stated pain (what they said).</li>
+      <li>Send the thank-you email within 2 hours.</li>
+      <li>If they offered an intro, follow up within 24 hours with a one-line "ready when you are" message.</li>
+    </ol>
+
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- TAB 3: BRANCHING                                           -->
+  <!-- ========================================================== -->
+  <section class="panel p3">
+
+    <h2>Branching — what to say when the conversation goes off-script</h2>
+    <p>Real calls do not follow the script. Below are the most common deviations and a scripted reaction for each.</p>
+
+    <h3>Pre-call deviations</h3>
+
+    <details>
+      <summary>They no-show</summary>
+      <div class="dcontent">
+        <p>Wait 5 minutes. Then send this email:</p>
+        <div class="say">"Hi [name], hope everything is okay. I had us down for [time] and did not see you on the call. Happy to reschedule if a different day works better — here is my booking link: [calendly]. If the timing is no longer right, no worries."</div>
+        <p class="small">If no reply in 3 days, mark them dropped. Do not chase a third time.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>They reschedule on short notice</summary>
+      <div class="dcontent">
+        <div class="say">"No problem, life happens. Send me a couple of times that work and I will book one in."</div>
+      </div>
+    </details>
+
+    <h3>During the opening</h3>
+
+    <details>
+      <summary>They say "I have a hard stop in 15 min, can we do this quickly?"</summary>
+      <div class="dcontent">
+        <div class="say">"Absolutely, let me compress. I will skip the context section and jump straight into the substance. Two questions for you, and we will be out in 15."</div>
+        <p>Then ask Q1 and Q4 only. Skip Q2, Q3, Section 4, Section 5, Section 6. Hit the close.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>They say "no" to recording AND seem suspicious</summary>
+      <div class="dcontent">
+        <div class="say">"Totally fine, I understand. Honestly, the easiest version is if I just take notes. And to be 100 percent clear — there is no sales motion here. I am literally trying to learn. If at the end you have feedback for me on whether this was useful, I would value that."</div>
+      </div>
+    </details>
+
+    <h3>During pain discovery</h3>
+
+    <details>
+      <summary>They give a long monologue you cannot follow</summary>
+      <div class="dcontent">
+        <p>Let them finish. Then:</p>
+        <div class="say">"That is a lot of useful context, thank you. Let me make sure I am tracking the most important thread. You said [echo back the most concrete thing they mentioned]. Can you walk me through that specific situation in more detail?"</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>They ask you a question instead of answering</summary>
+      <div class="dcontent">
+        <div class="say">"Happy to come back to that. Let me first finish the question I had — and then we can dig into yours. So you were saying [last thing they said]..."</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>They mention a competitor or existing tool</summary>
+      <div class="dcontent">
+        <div class="say">"Great, that is a real tool. What do you wish [tool name] did better? Or what part of [your domain] is not covered by [tool name] for you?"</div>
+        <p class="small">Never bash a competitor. Make their existing tool the entry point to a deeper conversation.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>They say "we are too small for this"</summary>
+      <div class="dcontent">
+        <div class="say">"That is helpful. What size company do you think this kind of work starts to make sense for? I am genuinely asking — that is part of what I am trying to figure out."</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>They say "we don't have budget"</summary>
+      <div class="dcontent">
+        <div class="say">"Fair, and again — I am not pitching today. I am asking how you think about that decision. Is it that there is no budget category for this, or that the existing budget is allocated, or that the leadership has not seen the case for spending?"</div>
+      </div>
+    </details>
+
+    <h3>During solution framing</h3>
+
+    <details>
+      <summary>They get excited and want to buy NOW</summary>
+      <div class="dcontent">
+        <div class="say">"That is a wonderful response and I want to honor it properly. Today was a research call so I do not have a real proposal in front of you. Let me follow up tomorrow with a proper conversation about what an engagement might look like, and we can move at your pace from there."</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>They say "send me a proposal" without much enthusiasm</summary>
+      <div class="dcontent">
+        <div class="say">"Happy to. Just so I scope it right, can I ask one more thing first — what would have to be true in the proposal for it to be a yes for you?"</div>
+      </div>
+    </details>
+
+    <details>
+      <summary>They flat-out say "this is not a fit for us"</summary>
+      <div class="dcontent">
+        <div class="say">"Got it, thank you for being direct. Can I ask: what would be a fit, from your perspective?"</div>
+        <p>Then close warmly and ask the referral question. Their network may still include people who do fit.</p>
+      </div>
+    </details>
+
+    <h3>During the close</h3>
+
+    <details>
+      <summary>They volunteer to introduce you to multiple people</summary>
+      <div class="dcontent">
+        <div class="say">"That is incredibly generous. The most useful thing for me would be one or two introductions where you think the fit is strongest. I would rather have two great conversations than five lukewarm ones. Who would be the top one or two on your list?"</div>
+      </div>
+    </details>
+
+    <h3>After the call</h3>
+
+    <details>
+      <summary>They ghost after the call</summary>
+      <div class="dcontent">
+        <p>Do nothing for 7 days. Then one short follow-up:</p>
+        <div class="say">"Hi [name], no expectation of a reply on this. Just wanted to circle back in case the timing for a referral or proposal feels different now. If not, no follow-up — just thanks again."</div>
+      </div>
+    </details>
+
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- TAB 4: PRE-CALL BRIEFINGS                                  -->
+  <!-- ========================================================== -->
+  <section class="panel p4">
+
+    <h2>Pre-call briefings</h2>
+    <p>Before every interview, spend 5 to 10 minutes building a one-page briefing on the prospect. The difference between a generic call and a call where you sound like you did your homework is exactly this 10 minutes.</p>
+
+    <h3>What a good briefing contains</h3>
+
+    <details open>
+      <summary>Quick orientation (read 5 min before the call)</summary>
+      <div class="dcontent">
+        <ul>
+          <li>Their role at the company.</li>
+          <li>Likely champion archetype: Finance / Engineer / Management / Mixed.</li>
+          <li>Recommended Q1 phrasing tailored to their industry.</li>
+          <li>Saboteur risk: who in their org might lose if you win? Often IT or an existing vendor.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details open>
+      <summary>Company snapshot</summary>
+      <div class="dcontent">
+        <ul>
+          <li>Domain, industry, sub-industry, country, HQ location.</li>
+          <li>Employee count and revenue estimate.</li>
+          <li>Tech stack hints (BuiltWith, Wappalyzer, job postings).</li>
+          <li>Tools they likely use that are in your category.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details open>
+      <summary>Recent signals</summary>
+      <div class="dcontent">
+        <ul>
+          <li>Funding rounds, mergers, leadership changes.</li>
+          <li>Recent news mentions (Google news 2026 + their company name).</li>
+          <li><strong>Recent job postings.</strong> Strong signal that budget is actively flowing into the function you sell into.</li>
+          <li>Anything regulatory or industry-specific they recently dealt with.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details open>
+      <summary>The contact themselves</summary>
+      <div class="dcontent">
+        <ul>
+          <li>Name, title, LinkedIn URL.</li>
+          <li><strong>Open the LinkedIn URL and skim the last 3 posts.</strong> Note any topic to mention organically. Do not force it; only use if you can do it naturally.</li>
+          <li>Mutual connections (LinkedIn shows this when you visit the profile).</li>
+          <li>Tone they project (formal / casual / thought-leader / lurker).</li>
+        </ul>
+      </div>
+    </details>
+
+    <details open>
+      <summary>Conversation hooks (use sparingly)</summary>
+      <div class="dcontent">
+        <ul>
+          <li>"I noticed [Company] is hiring a [role]. What is the job you are trying to fill?" (only if hiring)</li>
+          <li>"I saw your post about [topic]. How is that working out?" (only if recent and you read it)</li>
+          <li>"I see you have been at [Company] for [years]. What has changed for you on the [your domain] side in that time?" (always works)</li>
+        </ul>
+      </div>
+    </details>
+
+    <h3>Tooling options</h3>
+    <p>Pick whatever fits your workflow:</p>
+    <ul>
+      <li><strong>Manual:</strong> a Notion page or Google Doc per prospect, populated 5 to 10 min before the call.</li>
+      <li><strong>Spreadsheet:</strong> one row per prospect with columns matching the briefing sections above. Quick to scan.</li>
+      <li><strong>CRM auto-pull:</strong> if your CRM (Attio, HubSpot, NocoDB, Notion) has enrichment, pull what it has and fill manual gaps. Many of us are already storing intel — this is just surfacing it for the call.</li>
+      <li><strong>Scripted generator:</strong> if your CRM has an API, write a 100-line script that pulls a record by ID and renders a markdown briefing. (I built one for my CRM; happy to share the pattern.)</li>
+    </ul>
+
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- TAB 5: BUILD YOUR TOP 50                                   -->
+  <!-- ========================================================== -->
+  <section class="panel p5">
+
+    <h2>Build your top 50 contacts list</h2>
+    <p>This is Chris Carder's exercise from his Welcome Day Masterclass: who are your top 50 network connections? Approached for discovery interviews, this becomes your starter pool.</p>
+
+    <h3>Three pools to pull from</h3>
+
+    <details open>
+      <summary>Pool A — Cold but enriched (your CRM, lead lists, LinkedIn search)</summary>
+      <div class="dcontent">
+        <p>15 to 20 names from cold sources where you have basic enrichment data. These need verification before outreach (visit their website, find their LinkedIn).</p>
+        <p><strong>Sources to consider:</strong></p>
+        <ul>
+          <li>Existing leads in your CRM that have not been worked.</li>
+          <li>LinkedIn Sales Navigator search filtered to your ICP.</li>
+          <li>Industry directories or association member lists.</li>
+          <li>Recent job-posting signals (LinkedIn jobs filter by your relevant role).</li>
+        </ul>
+        <p><strong>Outreach template:</strong> cold (research framing, not sales).</p>
+      </div>
+    </details>
+
+    <details open>
+      <summary>Pool B — Warm network from your existing context</summary>
+      <div class="dcontent">
+        <p>10 to 15 names from people who already know you or have a mutual connection.</p>
+        <p><strong>Sources to consider:</strong></p>
+        <ul>
+          <li>ChaiTech Cohort 7 founders (they are themselves SMB decision-makers).</li>
+          <li>Past clients or colleagues who would take a 25-min call.</li>
+          <li>People you met at conferences, meetups, or alumni events in the last year.</li>
+          <li>Your LinkedIn 1st-degree connections who match your ICP.</li>
+        </ul>
+        <p><strong>Outreach template:</strong> warm (mention the mutual context).</p>
+      </div>
+    </details>
+
+    <details open>
+      <summary>Pool C — LinkedIn 1st-degree filtered to your ICP</summary>
+      <div class="dcontent">
+        <p>15 to 20 names from your existing LinkedIn network filtered carefully.</p>
+        <p><strong>How to filter (30 minutes on LinkedIn):</strong></p>
+        <ol>
+          <li>Open Connections.</li>
+          <li>Filter by location (your target geography).</li>
+          <li>Filter by current company size (your ICP — typically 51 to 500 for SMB plays).</li>
+          <li>Filter by title (the buyer titles for your category).</li>
+          <li>Pick the most plausible to take a 25-min research call from you.</li>
+        </ol>
+        <p><strong>Outreach template:</strong> warm or in-person ask if you see them in person.</p>
+      </div>
+    </details>
+
+    <h3>Top 50 tracker (template)</h3>
+
+    <table>
+      <thead>
+        <tr><th>#</th><th>Contact</th><th>Company</th><th>Title</th><th>Champion archetype</th><th>Pool (A/B/C)</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td colspan="6" style="color:#b0b8b8; padding: 12px 7px;">(your contact 1)</td></tr>
+        <tr><td>2</td><td colspan="6" style="color:#b0b8b8; padding: 12px 7px;">(2)</td></tr>
+        <tr><td>3</td><td colspan="6" style="color:#b0b8b8; padding: 12px 7px;">(3)</td></tr>
+      </tbody>
+    </table>
+
+    <p class="small">Print or copy this tab and fill in 50 rows. Status options: <code>prospected / contacted / replied / scheduled / held / follow-up / won / lost / dropped</code>.</p>
+
+    <div class="warn">
+    <strong>Before contacting anyone:</strong> if you operate in Canada, CASL applies (consent-based, stricter than CAN-SPAM). Every cold message must include sender identification, clear purpose, and an unsubscribe mechanism. Verify the email was conspicuously published before relying on implied consent.
+    </div>
+
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- TAB 6: QUICK REFERENCE                                     -->
+  <!-- ========================================================== -->
+  <section class="panel p6">
+
+    <h2>Quick reference cards</h2>
+    <p class="small">Print this tab on a single page. Cut into cards. Tape up where you can see during a call.</p>
+
+    <div class="grid2">
+
+    <div class="card">
+    <h4>Card 1 — Rob's 4 questions</h4>
+    <ol>
+      <li><strong>Walk me through the last time you faced [your primary pain].</strong></li>
+      <li><strong>What have you done to solve it? What happened?</strong></li>
+      <li><strong>Who else is affected by this problem?</strong></li>
+      <li><strong>If this problem disappeared tomorrow, what would change?</strong></li>
+    </ol>
+    </div>
+
+    <div class="card">
+    <h4>Card 2 — The 3 discipline rules</h4>
+    <ol>
+      <li><strong>Talk less than 15% of the time.</strong></li>
+      <li><strong>Position yourself as a researcher</strong>, not a seller.</li>
+      <li><strong>Look for gaping neck wounds</strong>, not vitamins.</li>
+    </ol>
+    </div>
+
+    <div class="card">
+    <h4>Card 3 — The 7 do-nots (Rob)</h4>
+    <ul>
+      <li>No talking about your product (in pain discovery).</li>
+      <li>No yes/no questions.</li>
+      <li>No confirmation-biased questions.</li>
+      <li>No ignoring tributaries.</li>
+      <li>No avoiding the magnitude question (Q4).</li>
+      <li>No confounding users, stakeholders, customers.</li>
+      <li>No closing during discovery.</li>
+    </ul>
+    </div>
+
+    <div class="card">
+    <h4>Card 4 — Vitamins / painkillers / wounds</h4>
+    <ul>
+      <li><strong>Vitamin:</strong> nice to have. They will not buy.</li>
+      <li><strong>Painkiller:</strong> real pain. They will pay.</li>
+      <li><strong>Gaping neck wound:</strong> urgent. They will pay a lot, immediately.</li>
+    </ul>
+    </div>
+
+    <div class="card">
+    <h4>Card 5 — The 8 personas (Rob)</h4>
+    <ul style="font-size: 9pt;">
+      <li><strong>Champion</strong> — wants what you have</li>
+      <li><strong>End User</strong> — uses it daily</li>
+      <li><strong>Decision Maker</strong> — signs the contract</li>
+      <li><strong>Financial Approver</strong> — approves spend</li>
+      <li><strong>Influencer</strong> — formal or informal</li>
+      <li><strong>Saboteur</strong> — has something to lose</li>
+      <li><strong>Evaluator</strong> — assesses fit</li>
+      <li><strong>Procurement</strong> — runs buying</li>
+    </ul>
+    </div>
+
+    <div class="card">
+    <h4>Card 6 — Map YOUR product</h4>
+    <p>Fill in for your own offering:</p>
+    <ul style="font-size: 9pt;">
+      <li>Sits on top of: <span class="placeholder">[X]</span></li>
+      <li>Alongside: <span class="placeholder">[Y]</span></li>
+      <li>Replaces: <span class="placeholder">[Z]</span></li>
+      <li>Not a competitor to: <span class="placeholder">[W]</span></li>
+    </ul>
+    </div>
+
+    <div class="card">
+    <h4>Card 7 — After every call (10 min)</h4>
+    <ol>
+      <li>Stop recording.</li>
+      <li>Update your CRM row (stage, pain_level, validations).</li>
+      <li>Notes: 1 quote + real pain + stated pain.</li>
+      <li>Thank-you email within 2 hours.</li>
+      <li>Intro follow-up within 24 hours (if offered).</li>
+    </ol>
+    </div>
+
+    <div class="card">
+    <h4>Card 8 — Pre-call (5 min)</h4>
+    <ol>
+      <li>Open prospect's LinkedIn, skim last 3 posts.</li>
+      <li>Open their website, verify name + title.</li>
+      <li>Google their company name + "news 2026".</li>
+      <li>Check if they are hiring (signals budget).</li>
+      <li>Confirm legal/permission basis for your outreach.</li>
+    </ol>
+    </div>
+
+    </div>
+
+    <h2 style="margin-top: 24px;">Improving this workbook</h2>
+    <p>If you ship a useful improvement, share it back. Things I would love to see from cohort members:</p>
+    <ul>
+      <li>Industry-specific Q1 variants for verticals I do not know (legal, manufacturing, education, real estate, hospitality).</li>
+      <li>Better branching for situations I have not yet encountered.</li>
+      <li>Sanitized examples of outreach templates that worked for you.</li>
+      <li>A version translated for non-English markets.</li>
+    </ul>
+    <p>Drop your improvements in the cohort Slack or DM me directly.</p>
+
+  </section>
+
+  </div>
+</div>
+
+<footer>
+  <span>Discovery Interview Workbook — ChaiTech Cohort Edition — built by Sasha (Protectyr) — Rob Kenedi framework</span>
+  <span>Generated 2026-04-22 — free to use and adapt</span>
+</footer>
+
+</div>
+</body>
+</html>
