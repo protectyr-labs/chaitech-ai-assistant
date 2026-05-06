@@ -16,7 +16,7 @@ After the first Claude Code session in Cohort 7, a lot of us walked out with the
 
 It belongs to the cohort. If you have a question, ask it here. If you have something that worked for you, share it here. The bar is "did it help me?" — that's it.
 
-> **What is Claude Code?** A free desktop app from Anthropic that lets you talk to Claude inside any folder on your computer. You type questions, it reads your files, and it can run "skills" — small helpers people have built for specific jobs (writing, planning, research, dashboards). The four helpers below are the ones we built first.
+> **What is Claude Code?** A free desktop app from Anthropic that lets you talk to Claude inside any folder on your computer. You type questions, it reads your files, and it can run "skills" — small helpers people have built for specific jobs (writing, planning, research, dashboards). The five helpers below are the ones we built first.
 
 ## Three things you can do here
 
