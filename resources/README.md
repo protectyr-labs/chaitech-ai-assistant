@@ -7,6 +7,7 @@ Workbooks, templates, and printables that help you do the work of building a sta
 | Resource | What it is | Built by |
 |---|---|---|
 | [Discovery Interview Workbook](discovery-interview-workbook/) | Printable HTML companion for Rob Kenedi's 40-interview customer discovery challenge. Verbatim script, branching scenarios, pre-call briefing template, quick reference cards. | Sasha Madaniev (Protectyr), Cohort 7 |
+| [Brand Workshop](brand-workshop/) | Printable Brand DNA workbook (14 exercises), fully filled fictional example (Lumen Coffee Roasters), facilitator guide for cohort leads. Companion to the [Brand Workshop skill](../skills/brand-workshop/). | Sasha Madaniev (Protectyr), Cohort 7. Method by Barry Hillier (Hillier Consulting) and Brian Hickling (Catalyst 17). |
 
 ## How to add a resource
 
