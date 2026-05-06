@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumen Coffee Roasters — Brand DNA · Filled Example</title>
+<style>
+  :root {
+    --ink: #2a1810;
+    --ink-soft: #4a3528;
+    --paper: #faf6ef;
+    --card: #ffffff;
+    --accent: #b04e1c;
+    --accent-soft: #fbe5d3;
+    --gold: #c9a85a;
+    --line: #e0d6c4;
+    --muted: #7d6f5e;
+    --good: #4a7c2a;
+    --warn: #b87a00;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; line-height: 1.55; font-size: 15px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 48px 32px 96px; }
+  header.cover { border-bottom: 4px double var(--ink); padding-bottom: 28px; margin-bottom: 32px; }
+  header.cover .eyebrow { text-transform: uppercase; letter-spacing: 0.32em; font-size: 12px; color: var(--muted); }
+  header.cover h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 56px; line-height: 1.05; margin: 6px 0 4px; letter-spacing: -0.5px; }
+  header.cover h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-style: italic; color: var(--ink-soft); font-size: 22px; margin: 0 0 14px; }
+  header.cover .meta { display: flex; gap: 18px; flex-wrap: wrap; color: var(--muted); font-size: 13px; margin-top: 14px; }
+  header.cover .meta span strong { color: var(--ink); }
+  .note { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 14px 18px; border-radius: 4px; margin: 24px 0 36px; font-size: 14px; }
+  .note strong { color: var(--accent); }
+  section { margin: 44px 0; padding-top: 8px; }
+  section h2.section-title { font-family: 'Playfair Display', Georgia, serif; font-size: 28px; margin: 0 0 6px; border-bottom: 1px solid var(--line); padding-bottom: 6px; color: var(--ink); }
+  section .subtitle { color: var(--muted); font-size: 13px; margin-bottom: 18px; font-style: italic; }
+  .answer { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 4px; padding: 16px 20px; margin: 12px 0 18px; box-shadow: 0 1px 2px rgba(42, 24, 16, 0.04); }
+  .answer ul { margin: 6px 0; padding-left: 22px; }
+  .answer li { margin: 3px 0; }
+  .answer p { margin: 6px 0; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 14px 0 6px; }
+  .stake { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; }
+  .stake h4 { margin: 0 0 6px; font-size: 14px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; }
+  .stake .name { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 17px; margin-bottom: 4px; color: var(--ink); }
+  .stake .desc { color: var(--ink-soft); font-size: 13.5px; }
+  .needs-row { display: grid; grid-template-columns: 140px 1fr 1fr 1fr; gap: 12px; margin: 10px 0; padding: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+  .needs-row .label { font-weight: 700; color: var(--accent); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; border-right: 1px solid var(--line); padding-right: 10px; }
+  .needs-row ul { margin: 0; padding-left: 18px; font-size: 13.5px; }
+  .needs-row li { margin: 2px 0; }
+  .cascade { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 18px 0; }
+  .cascade .col { background: var(--card); border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: 6px; padding: 14px; }
+  .cascade .col h4 { margin: 0 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); }
+  .cascade .col ul { padding-left: 18px; margin: 0; font-size: 13px; }
+  .cascade .col p { font-size: 13px; margin: 4px 0; }
+  .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 18px 0; }
+  .pillar { background: linear-gradient(180deg, #ffffff 0%, #fbf6ec 100%); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; }
+  .pillar .num { color: var(--gold); font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 700; line-height: 1; }
+  .pillar h4 { margin: 4px 0 8px; font-size: 16px; color: var(--ink); }
+  .pillar p { font-size: 13px; color: var(--ink-soft); margin: 0; }
+  .archetypes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 14px 0; }
+  .arch { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 12px; text-align: center; font-size: 13px; }
+  .arch.primary { border-color: var(--accent); border-width: 2px; background: var(--accent-soft); }
+  .arch.secondary { border-color: var(--gold); border-width: 2px; background: #fbf3df; }
+  .arch h5 { margin: 0 0 4px; font-family: 'Playfair Display', Georgia, serif; font-size: 15px; }
+  .arch .tag { display: inline-block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 6px; color: var(--muted); }
+  .arch.primary .tag { color: var(--accent); font-weight: 700; }
+  .arch.secondary .tag { color: var(--warn); font-weight: 700; }
+  .superpower { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .superpower .card { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 16px; }
+  .superpower h5 { margin: 0 0 8px; font-family: 'Playfair Display', Georgia, serif; color: var(--accent); font-size: 16px; }
+  .superpower p { margin: 0; font-size: 13.5px; color: var(--ink-soft); }
+  .word-cloud { line-height: 2.4; font-family: 'Playfair Display', Georgia, serif; }
+  .word-cloud span { display: inline-block; margin: 2px 6px; padding: 4px 10px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; font-size: 14px; }
+  .word-cloud span.hi { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+  .sentence-card { background: linear-gradient(135deg, #2a1810 0%, #b04e1c 100%); color: white; padding: 24px 28px; border-radius: 8px; margin: 18px 0; }
+  .sentence-card .label { font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+  .sentence-card .primary { font-family: 'Playfair Display', Georgia, serif; font-size: 32px; margin: 8px 0 14px; font-style: italic; }
+  .sentence-card ul { margin: 0; padding-left: 20px; color: rgba(255,255,255,0.92); font-size: 14px; }
+  .field-row { display: grid; grid-template-columns: 220px 1fr; gap: 16px; margin: 8px 0; padding: 12px 14px; background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+  .field-row .field { font-family: 'Playfair Display', Georgia, serif; font-style: italic; color: var(--accent); font-size: 16px; border-right: 1px solid var(--line); padding-right: 10px; }
+  .field-row .val { font-size: 14px; color: var(--ink-soft); }
+  .movement { background: linear-gradient(135deg, #c9a85a 0%, #b87a00 100%); color: white; padding: 24px; border-radius: 8px; margin: 18px 0; }
+  .movement h4 { margin: 0 0 6px; font-family: 'Playfair Display', Georgia, serif; font-size: 24px; }
+  .movement .cry { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 22px; margin: 12px 0; }
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .value-card { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 6px; padding: 14px 16px; }
+  .value-card h5 { margin: 0 0 6px; font-family: 'Playfair Display', Georgia, serif; font-size: 17px; color: var(--ink); }
+  .value-card .row { font-size: 13px; margin: 4px 0; }
+  .value-card .row strong { color: var(--accent); }
+  footer { margin-top: 64px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 900px) {
+    .grid-3, .cascade, .pillars, .superpower, .archetypes, .values-grid { grid-template-columns: 1fr; }
+    .needs-row { grid-template-columns: 1fr; }
+    .needs-row .label { border-right: 0; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+    .field-row { grid-template-columns: 1fr; }
+    .field-row .field { border-right: 0; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+    header.cover h1 { font-size: 40px; }
+  }
+  @media print {
+    body { background: white; }
+    .wrap { padding: 16px; }
+    section { page-break-inside: avoid; }
+    .sentence-card, .movement { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="cover">
+  <div class="eyebrow">Brand DNA · Filled Example (Fictional)</div>
+  <h1>Lumen Coffee Roasters</h1>
+  <h2>What a finished workshop looks like</h2>
+  <div class="meta">
+    <span><strong>Owner:</strong> Maria Costa, founder &amp; head roaster</span>
+    <span><strong>Location:</strong> Burlington, Ontario</span>
+    <span><strong>Status:</strong> v1 — exported from <code>brand-workshop</code></span>
+  </div>
+</header>
+
+<div class="note">
+  <strong>This is a fictional example.</strong> Lumen Coffee Roasters does not exist. The brand was made up to show what a fully filled <em>Brand Workshop</em> output looks like end-to-end. Use it to calibrate the level of detail and specificity to aim for in your own workshop.
+</div>
+
+<!-- 1 STAKEHOLDERS -->
+<section>
+  <h2 class="section-title">1 · Stakeholders</h2>
+  <div class="subtitle">Everyone the brand serves; the three most vital.</div>
+
+  <div class="answer">
+    <strong>All stakeholders we considered:</strong>
+    <ul>
+      <li>Walk-in regulars (the morning rush — same faces, same orders)</li>
+      <li>Weekend tourists from Toronto and Hamilton</li>
+      <li>Wholesale cafe accounts (12 cafes across the GTA)</li>
+      <li>Restaurant accounts (3 mid-range restaurants)</li>
+      <li>Subscription bag customers (online direct-to-home)</li>
+      <li>Origin farm partners (Honduras, Ethiopia, Colombia)</li>
+      <li>Importers (one main, one backup)</li>
+      <li>Roastery staff (5 baristas, 2 roasters, 1 roastery manager)</li>
+      <li>Maria's family (small business co-financed by spouse)</li>
+      <li>Landlord (one-shop lease tied to neighbourhood viability)</li>
+      <li>Local press &amp; food bloggers</li>
+      <li>City of Burlington (municipal small-business grants, zoning)</li>
+      <li>Equipment vendors (espresso machine, grinder, roaster)</li>
+      <li>Specialty Coffee Association (industry recognition / standards)</li>
+    </ul>
+  </div>
+
+  <div class="grid-3">
+    <div class="stake"><h4>Stakeholder 1</h4><div class="name">The Daily Regular</div><div class="desc">A 32-year-old who works from home three days a week, lives within walking distance, and treats the morning visit as the only fixed point in their day.</div></div>
+    <div class="stake"><h4>Stakeholder 2</h4><div class="name">The Cafe-Owner Wholesaler</div><div class="desc">A small independent cafe owner in the GTA who buys 20–60 lbs/week, needs reliable delivery, and uses Lumen's name on their menu as a credibility marker.</div></div>
+    <div class="stake"><h4>Stakeholder 3</h4><div class="name">The Origin Farm Partner</div><div class="desc">A second-generation farmer in Marcala, Honduras who sells 80% of their crop through specialty importers and depends on multi-year price commitments to plan reinvestment.</div></div>
+  </div>
+</section>
+
+<!-- 2 NEEDS -->
+<section>
+  <h2 class="section-title">2 · Needs by Stakeholder</h2>
+  <div class="subtitle">Functional, emotional, and social needs across the top 3.</div>
+
+  <div class="needs-row">
+    <div class="label">Functional</div>
+    <div><strong>Daily Regular</strong>
+      <ul>
+        <li>Get a consistent espresso in under 4 minutes</li>
+        <li>Find a clean seat near a power outlet</li>
+        <li>Pay tap-quick; no fuss with loyalty apps</li>
+        <li>Take their dog inside on the patio</li>
+      </ul>
+    </div>
+    <div><strong>Cafe-Owner Wholesaler</strong>
+      <ul>
+        <li>Reliable Tuesday delivery, no missed weeks</li>
+        <li>Three SKUs: house blend, single-origin rotating, decaf</li>
+        <li>Tasting notes + brewing recipes per bag</li>
+        <li>Net-30 invoicing, no surcharge for cards</li>
+      </ul>
+    </div>
+    <div><strong>Origin Farm Partner</strong>
+      <ul>
+        <li>A multi-year price commitment (above C-market)</li>
+        <li>Pre-financing before harvest</li>
+        <li>Cupping feedback within 30 days of arrival</li>
+        <li>Photos &amp; story published with the roast</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="needs-row">
+    <div class="label">Emotional</div>
+    <div><strong>Daily Regular</strong>
+      <ul>
+        <li>Feel known by name (or face) without performance</li>
+        <li>The first calm moment of their day</li>
+        <li>Trust this cup is the best they will get today</li>
+      </ul>
+    </div>
+    <div><strong>Cafe-Owner Wholesaler</strong>
+      <ul>
+        <li>Pride that "Lumen" on the menu raises their game</li>
+        <li>Confidence the roast won't suddenly change</li>
+        <li>Treated like a peer, not a margin line</li>
+      </ul>
+    </div>
+    <div><strong>Origin Farm Partner</strong>
+      <ul>
+        <li>Their craft is seen, not just their price</li>
+        <li>Long-term partnership, not transactional</li>
+        <li>Pride that their farm name is on the bag</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="needs-row">
+    <div class="label">Social</div>
+    <div><strong>Daily Regular</strong>
+      <ul>
+        <li>Signal "I have taste"</li>
+        <li>Belong to the cohort that knows where the good coffee is</li>
+      </ul>
+    </div>
+    <div><strong>Cafe-Owner Wholesaler</strong>
+      <ul>
+        <li>Signal to their customers: "we serve specialty, not commodity"</li>
+        <li>Belong to the "we work with Lumen" group of indie cafes</li>
+      </ul>
+    </div>
+    <div><strong>Origin Farm Partner</strong>
+      <ul>
+        <li>Be visible in the specialty market by name, not anonymously bulk-blended</li>
+        <li>Be the farm other farmers in the region call to ask "how do I get into specialty?"</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 3 ARCHETYPE -->
+<section>
+  <h2 class="section-title">3 · Purpose Archetype</h2>
+  <div class="subtitle">How Lumen makes the world a slightly better place.</div>
+
+  <div class="archetypes">
+    <div class="arch"><div class="tag">lower fit</div><h5>Reduce Friction</h5></div>
+    <div class="arch secondary"><div class="tag">Secondary fit</div><h5>Foster Prosperity</h5></div>
+    <div class="arch"><div class="tag">lower fit</div><h5>Enable Potential</h5></div>
+    <div class="arch primary"><div class="tag">Primary fit</div><h5>Encourage Exploration</h5></div>
+    <div class="arch"><div class="tag">lower fit</div><h5>Kindle Happiness</h5></div>
+  </div>
+
+  <div class="answer">
+    <p><strong>Encourage Exploration</strong> — Lumen exists to take people to a new tasting experience every season. Single-origin rotation, farm stories, brewing classes, tasting flights. The brand's job is to make discovery feel like a gentle adventure rather than a snobbery test.</p>
+    <p><strong>Foster Prosperity</strong> (secondary) — long-term price commitments and pre-financing for origin farms turn the supply chain into a partnership rather than an extraction. Wholesale cafe accounts grow alongside Lumen.</p>
+    <p><strong>Why this archetype, not "Kindle Happiness":</strong> happiness is the side effect, not the purpose. Anyone can sell joy in a paper cup; Lumen earns its place by guiding people somewhere they would not have gone alone. The November visit when Maria poured a Marcala honey-process for a regular who said "I never knew coffee could taste like that" — that moment is the brand.</p>
+  </div>
+</section>
+
+<!-- 4 PURPOSE LONG -->
+<section>
+  <h2 class="section-title">4 · Purpose Sentence · Long Form</h2>
+  <div class="field-row"><div class="field">We exist to</div><div class="val">guide ordinary coffee drinkers to extraordinary cups, season by season.</div></div>
+  <div class="field-row"><div class="field">by</div><div class="val">building multi-year partnerships with single-origin farms, rotating tasting menus quarterly, and teaching customers and cafes how to brew the bean — not just sell it.</div></div>
+  <div class="field-row"><div class="field">For the good of</div><div class="val">the curious drinker who deserves better than commodity coffee, the cafe owner whose menu is judged by the beans they choose, and the origin farmer whose craft is too often invisible.</div></div>
+  <div class="field-row"><div class="field">How this impacts the people we serve</div><div class="val">Regulars stop drinking on autopilot and start expecting taste. Cafe owners get a credibility marker their customers feel. Farms get multi-year price commitments and a name on the bag.</div></div>
+  <div class="field-row"><div class="field">How we make money sustainably</div><div class="val">Three engines: retail (40% revenue, highest margin, local moat), wholesale (45%, recurring, anchors weekly demand), subscription bags (15%, growing, expands geographic reach beyond drive distance).</div></div>
+</section>
+
+<!-- 5 WORDS -->
+<section>
+  <h2 class="section-title">5 · Purpose Words</h2>
+  <div class="answer">
+    <div class="word-cloud">
+      <span class="hi">Curious</span>
+      <span class="hi">Generous</span>
+      <span class="hi">Specific</span>
+      <span class="hi">Patient</span>
+      <span class="hi">Honest</span>
+      <span>Warm</span>
+      <span>Crafted</span>
+      <span>Seasonal</span>
+      <span>Plain-spoken</span>
+      <span>Welcoming</span>
+      <span>Disciplined</span>
+      <span>Local</span>
+      <span>Rooted</span>
+      <span>Adventurous</span>
+      <span>Educator</span>
+      <span>Quiet</span>
+      <span>Slow</span>
+      <span>Observant</span>
+      <span>Confident</span>
+      <span>Unfussy</span>
+      <span>Repeat-able</span>
+      <span>Trustworthy</span>
+      <span>Roasted-not-burnt</span>
+      <span>Shareable</span>
+      <span>Loyal</span>
+      <span>Tactile</span>
+      <span>Thoughtful</span>
+      <span>Considered</span>
+      <span>Direct</span>
+      <span>Generous-portioned</span>
+      <span>Open</span>
+      <span>Curated</span>
+      <span>Grounded</span>
+    </div>
+  </div>
+</section>
+
+<!-- 6 SHORT -->
+<section>
+  <h2 class="section-title">6 · Purpose Sentence · Short Form</h2>
+  <div class="sentence-card">
+    <div class="label">Primary</div>
+    <div class="primary">"Coffee for the curious."</div>
+    <div class="label">Alternates</div>
+    <ul>
+      <li>"Roasted with patience, poured with respect."</li>
+      <li>"From a farm with a name, to a cup with a story."</li>
+      <li>"Better cups, season by season."</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 7 SUPERPOWER -->
+<section>
+  <h2 class="section-title">7 · Our Superpower</h2>
+  <div class="superpower">
+    <div class="card"><h5>What the world needs most</h5><p>Coffee that is local, traceable, and tastes like the place it came from — without the snobbery wall that keeps most drinkers from ever trying it.</p></div>
+    <div class="card"><h5>What we are uniquely gifted at</h5><p>Roasting profiles built around the bean, not the equipment. Maria's eight years cupping at Q-grader level. Direct relationships with three origins, no broker layer. A teaching style that makes a beginner feel smart in 90 seconds.</p></div>
+    <div class="card"><h5>What we are passionate about</h5><p>The look on a regular's face when an unfamiliar single-origin lands and they say "wait — what is this?" That moment is why the doors open every morning.</p></div>
+  </div>
+  <div class="answer"><strong>Intersection: </strong>Lumen is the bridge between curious drinkers who deserve better and origin farms whose craft is invisible — using direct sourcing, seasonal rotation, and patient teaching to make discovery feel ordinary.</div>
+</section>
+
+<!-- 8 CASCADE -->
+<section>
+  <h2 class="section-title">8 · Strategic Cascade <span style="font-weight:400;font-size:14px;color:var(--muted);">(Roger Martin · Playing to Win)</span></h2>
+  <div class="cascade">
+    <div class="col"><h4>Winning Aspiration</h4><p>Become the specialty roaster of record for greater Hamilton / Burlington — the brand the next wave of indie cafes name on their menus and the brand Toronto coffee tourists drive 45 minutes to visit on a weekend.</p></div>
+    <div class="col"><h4>Where to Play</h4>
+      <ul>
+        <li><strong>Buyers:</strong> walk-in regulars; indie cafes &amp; small restaurants in GTA; subscription bag customers in Ontario.</li>
+        <li><strong>Geo:</strong> Hamilton/Burlington beachhead. GTA wholesale. Online Ontario only (no cross-border yet).</li>
+        <li><strong>Channels:</strong> single retail location; wholesale direct sales; e-commerce subscription.</li>
+        <li><strong>Will not play:</strong> grocery shelf, Amazon, drive-through, white-label private brands. Those are volume games; Lumen is a discovery game.</li>
+      </ul>
+    </div>
+    <div class="col"><h4>How to Win</h4>
+      <ul>
+        <li>Direct origin relationships — three farms by name, multi-year contracts.</li>
+        <li>Seasonal rotation — a new single-origin every 90 days, brewed and taught.</li>
+        <li>Teaching as marketing — free Saturday brewing class earns more goodwill than any ad.</li>
+        <li>Cafe partnerships that elevate — train wholesale buyers, don't just deliver beans.</li>
+      </ul>
+    </div>
+    <div class="col"><h4>Capabilities</h4>
+      <ul>
+        <li>Q-grader-level cupping (Maria).</li>
+        <li>Direct importer relationship secured for two of three origins.</li>
+        <li>Roastery production capacity 200 lbs/week, headroom to 350.</li>
+        <li>Wholesale CRM &amp; delivery routing.</li>
+        <li><em>Gaps:</em> e-commerce subscription tech is duct-taped; need a real platform. No content engine for stories. No second roaster trained.</li>
+      </ul>
+    </div>
+    <div class="col"><h4>Management Systems</h4>
+      <ul>
+        <li>Weekly cupping discipline — every roast tasted before it ships.</li>
+        <li>Monthly wholesale partner check-in (10 min each).</li>
+        <li>Quarterly origin trip or call (one of three farms each quarter).</li>
+        <li>Saturday brewing class as fixed ritual — never cancelled.</li>
+        <li>Inventory + COGS tracker per origin to defend pricing.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 9 PILLARS -->
+<section>
+  <h2 class="section-title">9 · Strategic Pillars</h2>
+  <div class="pillars">
+    <div class="pillar"><div class="num">01</div><h4>Direct Origin</h4><p>Every coffee on the menu has a farm name and a story. No anonymous blends, no broker chains. If we cannot name the origin, we do not roast it.</p></div>
+    <div class="pillar"><div class="num">02</div><h4>Seasonal Rotation</h4><p>The single-origin slot rotates every 90 days. Customers expect change. The menu is a calendar, not a catalog.</p></div>
+    <div class="pillar"><div class="num">03</div><h4>Teach the Cup</h4><p>Saturday brewing class, never cancelled. Wholesale partners trained, not just supplied. A regular should know more about coffee after a year with us than before.</p></div>
+    <div class="pillar"><div class="num">04</div><h4>Generous Hospitality</h4><p>Free water, free Wi-Fi, dogs on the patio, no rush at the till. Hospitality is a margin line we are willing to lose to keep.</p></div>
+  </div>
+</section>
+
+<!-- 10 VALUES -->
+<section>
+  <h2 class="section-title">10 · Values <span style="font-weight:400;font-size:14px;color:var(--muted);">(Brian Hickling · 4-step values process)</span></h2>
+  <div class="values-grid">
+    <div class="value-card"><h5>Patience</h5>
+      <div class="row"><strong>Definition:</strong> We let the bean tell us when it is ready, not the schedule.</div>
+      <div class="row"><strong>Behavior we expect:</strong> Pull a roast from the schedule if a green sample isn't right.</div>
+      <div class="row"><strong>Will not tolerate:</strong> Shipping a profile we are unsure of to hit a Tuesday delivery.</div>
+    </div>
+    <div class="value-card"><h5>Specificity</h5>
+      <div class="row"><strong>Definition:</strong> Every claim is anchored in something a customer can taste, see, or visit.</div>
+      <div class="row"><strong>Behavior we expect:</strong> A bag without farm name, altitude, and process gets re-bagged.</div>
+      <div class="row"><strong>Will not tolerate:</strong> "Smooth, balanced, complex" as a tasting note. Lazy and meaningless.</div>
+    </div>
+    <div class="value-card"><h5>Generosity</h5>
+      <div class="row"><strong>Definition:</strong> We share — taste, knowledge, time — beyond what the transaction requires.</div>
+      <div class="row"><strong>Behavior we expect:</strong> Give a free taste of the new arrival to every regular for the first week.</div>
+      <div class="row"><strong>Will not tolerate:</strong> Charging a wholesale partner for the brewing recipe sheet.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 MOVEMENT -->
+<section>
+  <h2 class="section-title">11 · Brand Movement <span style="font-weight:400;font-size:14px;color:var(--muted);">(Catalyst 17 layer)</span></h2>
+  <div class="movement">
+    <h4>Coffee Should Taste Like Where It's From</h4>
+    <p><strong>Enemy:</strong> The industrial coffee chain that flattens every bean into a single brown taste, where neither the drinker nor the farmer is given the dignity of a real conversation.</p>
+    <div class="cry">"Know the farm. Brew the bean. Earn the cup."</div>
+    <p><strong>Ways to join:</strong></p>
+    <ul>
+      <li>Show up at Saturday brewing class — first one is free, all skill levels.</li>
+      <li>Ask the barista what farm your espresso came from — every shift can answer.</li>
+      <li>Subscribe to the seasonal rotation — one bag every six weeks.</li>
+      <li>Bring a friend who has only ever drunk supermarket coffee.</li>
+      <li>Use #knowthefarm when you post a cup.</li>
+    </ul>
+    <p><strong>How we measure growth:</strong></p>
+    <ul>
+      <li>Saturday class repeat rate (not first-timers, returners).</li>
+      <li>Wholesale partners who name the farm on their menu (not just "Lumen blend").</li>
+      <li>Subscription customers who graduate to a second farm of their choosing.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div>Lumen Coffee Roasters · Brand DNA v1 · Fictional example</div>
+  <div>Generated by <code>brand-workshop</code> · Hillier × Hickling × Martin</div>
+</footer>
+
+</div>
+</body>
+</html>

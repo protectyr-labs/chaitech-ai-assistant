@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{COMPANY_NAME}} — Brand DNA</title>
+<style>
+  :root {
+    --ink: #0e1a2b;
+    --ink-soft: #2a3a52;
+    --paper: #f8f7f2;
+    --card: #ffffff;
+    --accent: #1f6feb;
+    --accent-soft: #dde9ff;
+    --gold: #c9a85a;
+    --line: #d8d4c7;
+    --muted: #6b7280;
+    --good: #1f8a4c;
+    --warn: #b87a00;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 48px 32px 96px; }
+  header.cover { border-bottom: 4px double var(--ink); padding-bottom: 28px; margin-bottom: 32px; }
+  header.cover .eyebrow { text-transform: uppercase; letter-spacing: 0.32em; font-size: 12px; color: var(--muted); }
+  header.cover h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 56px; line-height: 1.05; margin: 6px 0 4px; letter-spacing: -0.5px; }
+  header.cover h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-style: italic; color: var(--ink-soft); font-size: 22px; margin: 0 0 14px; }
+  header.cover .meta { display: flex; gap: 18px; flex-wrap: wrap; color: var(--muted); font-size: 13px; margin-top: 14px; }
+  header.cover .meta span strong { color: var(--ink); }
+  .note { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 14px 18px; border-radius: 4px; margin: 24px 0 36px; font-size: 14px; }
+  .note strong { color: var(--accent); }
+  section { margin: 44px 0; padding-top: 8px; }
+  section h2.section-title { font-family: 'Playfair Display', Georgia, serif; font-size: 28px; margin: 0 0 6px; border-bottom: 1px solid var(--line); padding-bottom: 6px; color: var(--ink); }
+  section .subtitle { color: var(--muted); font-size: 13px; margin-bottom: 18px; font-style: italic; }
+  .answer { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 4px; padding: 16px 20px; margin: 12px 0 18px; box-shadow: 0 1px 2px rgba(14, 26, 43, 0.04); }
+  .answer ul { margin: 6px 0; padding-left: 22px; }
+  .answer li { margin: 3px 0; }
+  .answer p { margin: 6px 0; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 14px 0 6px; }
+  .stake { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; box-shadow: 0 1px 2px rgba(14, 26, 43, 0.04); }
+  .stake h4 { margin: 0 0 6px; font-size: 14px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; }
+  .stake .name { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 17px; margin-bottom: 4px; color: var(--ink); }
+  .stake .desc { color: var(--ink-soft); font-size: 13.5px; }
+  .needs-row { display: grid; grid-template-columns: 140px 1fr 1fr 1fr; gap: 12px; margin: 10px 0; padding: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+  .needs-row .label { font-weight: 700; color: var(--accent); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; border-right: 1px solid var(--line); padding-right: 10px; }
+  .needs-row ul { margin: 0; padding-left: 18px; font-size: 13.5px; }
+  .needs-row li { margin: 2px 0; }
+  .cascade { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 18px 0; }
+  .cascade .col { background: var(--card); border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: 6px; padding: 14px 14px 16px; box-shadow: 0 1px 2px rgba(14, 26, 43, 0.04); }
+  .cascade .col h4 { margin: 0 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); }
+  .cascade .col ul { padding-left: 18px; margin: 0; font-size: 13px; }
+  .cascade .col li { margin: 4px 0; }
+  .cascade .col p { font-size: 13px; margin: 4px 0; }
+  .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 18px 0; }
+  .pillar { background: linear-gradient(180deg, #ffffff 0%, #fbfaf4 100%); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; box-shadow: 0 1px 2px rgba(14, 26, 43, 0.05); }
+  .pillar .num { color: var(--gold); font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 700; line-height: 1; }
+  .pillar h4 { margin: 4px 0 8px; font-size: 16px; color: var(--ink); }
+  .pillar p { font-size: 13px; color: var(--ink-soft); margin: 0; }
+  .archetypes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 14px 0; }
+  .arch { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 12px; text-align: center; font-size: 13px; }
+  .arch.primary { border-color: var(--accent); border-width: 2px; background: var(--accent-soft); }
+  .arch.secondary { border-color: var(--gold); border-width: 2px; background: #fbf3df; }
+  .arch h5 { margin: 0 0 4px; font-family: 'Playfair Display', Georgia, serif; font-size: 15px; }
+  .arch .tag { display: inline-block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 6px; color: var(--muted); }
+  .arch.primary .tag { color: var(--accent); font-weight: 700; }
+  .arch.secondary .tag { color: var(--warn); font-weight: 700; }
+  .superpower { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .superpower .card { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 16px; }
+  .superpower h5 { margin: 0 0 8px; font-family: 'Playfair Display', Georgia, serif; color: var(--accent); font-size: 16px; }
+  .superpower p { margin: 0; font-size: 13.5px; color: var(--ink-soft); }
+  .word-cloud { line-height: 2.4; font-family: 'Playfair Display', Georgia, serif; }
+  .word-cloud span { display: inline-block; margin: 2px 6px; padding: 4px 10px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; font-size: 14px; }
+  .word-cloud span.hi { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+  .sentence-card { background: linear-gradient(135deg, #0e1a2b 0%, #1f6feb 100%); color: white; padding: 24px 28px; border-radius: 8px; margin: 18px 0; }
+  .sentence-card .label { font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+  .sentence-card .primary { font-family: 'Playfair Display', Georgia, serif; font-size: 32px; margin: 8px 0 14px; font-style: italic; }
+  .sentence-card ul { margin: 0; padding-left: 20px; color: rgba(255,255,255,0.92); font-size: 14px; }
+  .field-row { display: grid; grid-template-columns: 220px 1fr; gap: 16px; margin: 8px 0; padding: 12px 14px; background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+  .field-row .field { font-family: 'Playfair Display', Georgia, serif; font-style: italic; color: var(--accent); font-size: 16px; border-right: 1px solid var(--line); padding-right: 10px; }
+  .field-row .val { font-size: 14px; color: var(--ink-soft); }
+  .movement { background: linear-gradient(135deg, #c9a85a 0%, #b87a00 100%); color: white; padding: 24px; border-radius: 8px; margin: 18px 0; }
+  .movement h4 { margin: 0 0 6px; font-family: 'Playfair Display', Georgia, serif; font-size: 24px; }
+  .movement .cry { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 22px; margin: 12px 0; }
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .value-card { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 6px; padding: 14px 16px; }
+  .value-card h5 { margin: 0 0 6px; font-family: 'Playfair Display', Georgia, serif; font-size: 17px; color: var(--ink); }
+  .value-card .row { font-size: 13px; margin: 4px 0; }
+  .value-card .row strong { color: var(--accent); }
+  footer { margin-top: 64px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 900px) {
+    .grid-3, .cascade, .pillars, .superpower, .archetypes, .values-grid { grid-template-columns: 1fr; }
+    .needs-row { grid-template-columns: 1fr; }
+    .needs-row .label { border-right: 0; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+    .field-row { grid-template-columns: 1fr; }
+    .field-row .field { border-right: 0; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+    header.cover h1 { font-size: 40px; }
+  }
+  @media print {
+    body { background: white; }
+    .wrap { padding: 16px; }
+    section { page-break-inside: avoid; }
+    .sentence-card, .movement { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="cover">
+  <div class="eyebrow">Brand DNA · Workshop Output</div>
+  <h1>{{COMPANY_NAME}}</h1>
+  <h2>Brand DNA Deck — v1</h2>
+  <div class="meta">
+    <span><strong>Prepared:</strong> {{DATE}}</span>
+    <span><strong>Owner:</strong> {{OWNER}}</span>
+    <span><strong>Status:</strong> {{STATUS}}</span>
+  </div>
+</header>
+
+<div class="note">
+  <strong>About this deck —</strong> Generated by the open-source <em>Brand Workshop</em> Claude Code skill,
+  adapted from the Brand DNA workshop by Barry Hillier (Hillier Consulting) and Brian Hickling (Catalyst 17). Roger Martin's
+  <em>Playing to Win</em> strategic cascade is woven into Section 8. Edit
+  <code>brand-workshop/STATE.md</code> and re-run <code>/brand-export</code> to regenerate.
+  <strong style="color:var(--gold);"> This is a draft view. For the deeper Brand DNA work, see <em>Find My Brand DNA</em> by Hillier Consulting.</strong>
+</div>
+
+<!-- 1 STAKEHOLDERS -->
+<section>
+  <h2 class="section-title">1 · Stakeholders</h2>
+  <div class="subtitle">Everyone the brand serves; the three most vital.</div>
+  <div class="answer">{{ALL_STAKEHOLDERS}}</div>
+  <div class="grid-3">{{TOP_3_STAKEHOLDERS_CARDS}}</div>
+</section>
+
+<!-- 2 NEEDS -->
+<section>
+  <h2 class="section-title">2 · Needs by Stakeholder</h2>
+  <div class="subtitle">Functional, emotional, and social needs across the top 3.</div>
+  <div class="needs-row">
+    <div class="label">Functional</div>
+    {{FUNCTIONAL_NEEDS_3_COLS}}
+  </div>
+  <div class="needs-row">
+    <div class="label">Emotional</div>
+    {{EMOTIONAL_NEEDS_3_COLS}}
+  </div>
+  <div class="needs-row">
+    <div class="label">Social</div>
+    {{SOCIAL_NEEDS_3_COLS}}
+  </div>
+</section>
+
+<!-- 3 PURPOSE ARCHETYPE -->
+<section>
+  <h2 class="section-title">3 · Purpose Archetype</h2>
+  <div class="subtitle">How this brand makes the world better.</div>
+  <div class="archetypes">{{ARCHETYPE_CARDS}}</div>
+  <div class="answer">{{ARCHETYPE_WHY}}</div>
+</section>
+
+<!-- 4 PURPOSE SENTENCE LONG -->
+<section>
+  <h2 class="section-title">4 · Purpose Sentence · Long Form</h2>
+  <div class="field-row"><div class="field">We exist to</div><div class="val">{{PURPOSE_WE_EXIST_TO}}</div></div>
+  <div class="field-row"><div class="field">by</div><div class="val">{{PURPOSE_BY}}</div></div>
+  <div class="field-row"><div class="field">For the good of</div><div class="val">{{PURPOSE_FOR_THE_GOOD_OF}}</div></div>
+  <div class="field-row"><div class="field">How this impacts</div><div class="val">{{PURPOSE_IMPACT}}</div></div>
+  <div class="field-row"><div class="field">How we make money sustainably</div><div class="val">{{PURPOSE_SUSTAINABILITY}}</div></div>
+</section>
+
+<!-- 5 PURPOSE WORDS -->
+<section>
+  <h2 class="section-title">5 · Purpose Words</h2>
+  <div class="subtitle">20–35 words that describe the brand.</div>
+  <div class="answer"><div class="word-cloud">{{PURPOSE_WORDS}}</div></div>
+</section>
+
+<!-- 6 SHORT SENTENCE -->
+<section>
+  <h2 class="section-title">6 · Purpose Sentence · Short Form</h2>
+  <div class="sentence-card">
+    <div class="label">Primary</div>
+    <div class="primary">"{{PURPOSE_SHORT_PRIMARY}}"</div>
+    <div class="label">Alternates</div>
+    <ul>{{PURPOSE_SHORT_ALTERNATES}}</ul>
+  </div>
+</section>
+
+<!-- 7 SUPERPOWER -->
+<section>
+  <h2 class="section-title">7 · Our Superpower</h2>
+  <div class="superpower">
+    <div class="card"><h5>What the world needs most</h5><p>{{SUPERPOWER_WORLD}}</p></div>
+    <div class="card"><h5>What we are uniquely gifted at</h5><p>{{SUPERPOWER_GIFTED}}</p></div>
+    <div class="card"><h5>What we are passionate about</h5><p>{{SUPERPOWER_PASSIONATE}}</p></div>
+  </div>
+  <div class="answer"><strong>Intersection: </strong>{{SUPERPOWER_INTERSECTION}}</div>
+</section>
+
+<!-- 8 STRATEGIC CASCADE -->
+<section>
+  <h2 class="section-title">8 · Strategic Cascade <span style="font-weight:400;font-size:14px;color:var(--muted);">(Roger Martin · Playing to Win)</span></h2>
+  <div class="cascade">
+    <div class="col"><h4>Winning Aspiration</h4><p>{{CASCADE_ASPIRATION}}</p></div>
+    <div class="col"><h4>Where to Play</h4>{{CASCADE_WHERE}}</div>
+    <div class="col"><h4>How to Win</h4>{{CASCADE_HOW}}</div>
+    <div class="col"><h4>Capabilities</h4>{{CASCADE_CAPABILITIES}}</div>
+    <div class="col"><h4>Management Systems</h4>{{CASCADE_SYSTEMS}}</div>
+  </div>
+</section>
+
+<!-- 9 PILLARS -->
+<section>
+  <h2 class="section-title">9 · Strategic Pillars</h2>
+  <div class="pillars">{{PILLARS_CARDS}}</div>
+</section>
+
+<!-- 10 ORIGIN STORY -->
+<section>
+  <h2 class="section-title">10 · Origin Story</h2>
+  <div class="subtitle">The moment, frustration, or insight that started this.</div>
+  <div class="answer">{{ORIGIN_STORY}}</div>
+</section>
+
+<!-- 11 CUSTOMER TRANSFORMATION -->
+<section>
+  <h2 class="section-title">11 · Customer Transformation</h2>
+  <div class="subtitle">Before / after / unlock — for the top stakeholder(s).</div>
+  <div class="answer">{{CUSTOMER_TRANSFORMATION}}</div>
+</section>
+
+<!-- 12 BRAND IS / IS NOT -->
+<section>
+  <h2 class="section-title">12 · Brand IS / IS NOT</h2>
+  <div class="subtitle">Two parallel lists. The IS NOT list does most of the work.</div>
+  <div class="grid-3" style="grid-template-columns: 1fr 1fr;">
+    <div class="stake" style="border-left:4px solid var(--accent);"><h4>Brand IS</h4>{{BRAND_IS}}</div>
+    <div class="stake" style="border-left:4px solid var(--gold);"><h4>Brand IS NOT</h4>{{BRAND_ISNOT}}</div>
+  </div>
+</section>
+
+<!-- 13 CENTRAL BRAND TENSION -->
+<section>
+  <h2 class="section-title">13 · Central Brand Tension</h2>
+  <div class="subtitle">The productive tension this brand navigates, with a chosen position.</div>
+  <div class="answer">
+    <div style="display:flex;align-items:center;gap:18px;margin:8px 0 14px;">
+      <strong style="font-family:'Playfair Display',Georgia,serif;font-size:18px;color:var(--accent);">{{TENSION_LEFT}}</strong>
+      <div style="flex:1;height:8px;background:linear-gradient(90deg, var(--accent), var(--gold));border-radius:4px;position:relative;">
+        <div style="position:absolute;left:{{TENSION_POSITION_PCT}}%;top:-6px;width:20px;height:20px;border-radius:50%;background:var(--ink);border:3px solid white;box-shadow:0 1px 3px rgba(0,0,0,0.3);transform:translateX(-50%);"></div>
+      </div>
+      <strong style="font-family:'Playfair Display',Georgia,serif;font-size:18px;color:var(--gold);">{{TENSION_RIGHT}}</strong>
+    </div>
+    <div style="text-align:center;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:14px;">position: {{TENSION_POSITION}} / 100</div>
+    {{TENSION_WHY}}
+  </div>
+</section>
+
+<!-- 14 WILL NOT DO -->
+<section>
+  <h2 class="section-title">14 · What We Will NOT Do</h2>
+  <div class="subtitle">Boundaries clarify identity faster than aspirations.</div>
+  <div class="answer">{{NOT_DOING}}</div>
+</section>
+
+<!-- 15 VALUES (optional) -->
+{{VALUES_SECTION}}
+
+<!-- 16 MOVEMENT (optional) -->
+{{MOVEMENT_SECTION}}
+
+<!-- DRAFT NOTICE + HANDOFF -->
+<section style="margin-top: 56px;">
+  <div style="background: linear-gradient(135deg, #c9a85a 0%, #b87a00 100%); color: white; padding: 24px 28px; border-radius: 8px;">
+    <div style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 8px;">This is a draft document</div>
+    <div style="font-family:'Playfair Display',Georgia,serif;font-size:20px;font-style:italic;margin-bottom:10px;">For the deeper Brand DNA work — archetype, voice and tone, brand architecture, and synthesis — see <strong>Find My Brand DNA</strong> by Hillier Consulting or work directly with Barry Hillier.</div>
+    <div style="font-size:13px;opacity:0.92;">Take <code style="background:rgba(255,255,255,0.18);padding:1px 6px;border-radius:3px;color:white;">brand-workshop/STATE.md</code> with you. Most of the answers are already typed.</div>
+  </div>
+</section>
+
+<footer>
+  <div>{{COMPANY_NAME}} · Brand DNA · {{DATE}} · <em>draft view</em></div>
+  <div>Generated by <code>brand-workshop</code> · with credit to <strong>Hillier Consulting</strong> and <strong>Catalyst 17</strong></div>
+</footer>
+
+</div>
+</body>
+</html>

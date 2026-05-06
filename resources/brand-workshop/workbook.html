@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Workshop · Printable Workbook</title>
+<style>
+  :root {
+    --ink: #0e1a2b;
+    --ink-soft: #2a3a52;
+    --paper: #ffffff;
+    --line: #cfcabe;
+    --muted: #6b7280;
+    --accent: #1f6feb;
+    --gold: #c9a85a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px; }
+  header.cover {
+    text-align: center;
+    border-bottom: 4px double var(--ink);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+  header.cover .eyebrow { text-transform: uppercase; letter-spacing: 0.32em; font-size: 11px; color: var(--muted); }
+  header.cover h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 44px; line-height: 1.05; margin: 6px 0; }
+  header.cover h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-style: italic; color: var(--ink-soft); font-size: 18px; margin: 0 0 8px; }
+  header.cover p { color: var(--muted); font-size: 13px; margin: 6px 0 0; }
+  .meta-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 18px 0; padding: 14px; border: 1px solid var(--line); border-radius: 4px; }
+  .meta-row label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--muted); display: block; margin-bottom: 4px; }
+  .meta-row .line { border-bottom: 1px solid var(--ink); height: 22px; }
+  section { margin: 36px 0; page-break-inside: avoid; }
+  section h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 26px; margin: 0 0 4px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+  section .subtitle { color: var(--muted); font-size: 12px; font-style: italic; margin-bottom: 16px; }
+  .task { background: #f7f3e9; border-left: 3px solid var(--gold); padding: 10px 14px; font-size: 13px; margin: 10px 0; border-radius: 3px; }
+  .task strong { color: var(--ink); }
+  .lines { margin: 14px 0; }
+  .lines .line { border-bottom: 1px solid var(--line); height: 28px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 14px 0; }
+  .stake-box { border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 4px; padding: 12px; min-height: 130px; }
+  .stake-box label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); font-weight: 700; }
+  .stake-box .name-line { border-bottom: 1px solid var(--ink); height: 24px; margin: 6px 0 10px; }
+  .stake-box .desc-lines .line { border-bottom: 1px solid var(--line); height: 22px; margin-bottom: 4px; }
+  .needs-block { border: 1px solid var(--line); border-radius: 4px; padding: 14px; margin: 12px 0; page-break-inside: avoid; }
+  .needs-block .label { display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); font-weight: 700; padding: 3px 10px; border: 1px solid var(--accent); border-radius: 12px; margin-bottom: 10px; }
+  .needs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .needs-col h5 { font-size: 12px; margin: 0 0 6px; color: var(--ink-soft); border-bottom: 1px dashed var(--line); padding-bottom: 4px; }
+  .needs-col .line { border-bottom: 1px solid var(--line); height: 22px; margin-bottom: 4px; }
+  .archetypes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 14px 0; }
+  .arch { border: 2px solid var(--line); border-radius: 4px; padding: 10px; text-align: center; font-size: 12px; }
+  .arch .check { display: inline-block; width: 14px; height: 14px; border: 2px solid var(--ink); border-radius: 3px; margin-bottom: 6px; }
+  .arch h5 { margin: 0 0 4px; font-family: 'Playfair Display', Georgia, serif; font-size: 14px; }
+  .arch .ex { color: var(--muted); font-size: 11px; }
+  .field-row { display: grid; grid-template-columns: 200px 1fr; gap: 14px; margin: 8px 0; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .field-row .field { font-family: 'Playfair Display', Georgia, serif; font-style: italic; color: var(--accent); font-size: 15px; }
+  .field-row .lines .line { height: 22px; }
+  .word-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 14px 0; }
+  .word-grid .word-line { border-bottom: 1px solid var(--line); height: 26px; }
+  .super-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .super-grid .col { border: 1px solid var(--line); border-radius: 4px; padding: 12px; }
+  .super-grid .col h5 { margin: 0 0 8px; color: var(--accent); font-family: 'Playfair Display', Georgia, serif; font-size: 14px; }
+  .super-grid .col .lines .line { height: 22px; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
+  .cascade-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .cascade-grid .col { border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 4px; padding: 10px; min-height: 220px; }
+  .cascade-grid .col h5 { margin: 0 0 8px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); }
+  .cascade-grid .col .lines .line { height: 18px; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
+  .pillars-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 14px 0; }
+  .pillar-box { border: 1px solid var(--line); border-radius: 4px; padding: 14px; min-height: 110px; }
+  .pillar-box .num { font-family: 'Playfair Display', Georgia, serif; color: var(--gold); font-size: 24px; line-height: 1; }
+  .pillar-box .lines .line { height: 22px; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
+  .footnote { color: var(--muted); font-size: 11px; margin-top: 40px; border-top: 1px solid var(--line); padding-top: 12px; }
+  @media print {
+    .wrap { padding: 18px; max-width: none; }
+    section { page-break-inside: avoid; }
+    @page { margin: 14mm; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="cover">
+  <div class="eyebrow">Brand Workshop · Printable Workbook</div>
+  <h1>Brand DNA</h1>
+  <h2>Tools &amp; Frameworks</h2>
+  <p>Adapted with credit from the public Brand DNA workshop by Barry Hillier and Brian Hickling.</p>
+</header>
+
+<div class="meta-row">
+  <div><label>Company / Brand</label><div class="line"></div></div>
+  <div><label>Owner</label><div class="line"></div></div>
+  <div><label>Date</label><div class="line"></div></div>
+</div>
+
+<!-- 1 STAKEHOLDERS -->
+<section>
+  <h2>1 · Stakeholders</h2>
+  <div class="subtitle">Everyone the brand serves, then the three most vital.</div>
+
+  <div class="task"><strong>TASK A · </strong>Write all the different stakeholders you can think of for your business or brand. These typically include users, buyers, employees, board members, suppliers, family, general public, government, etc. Cast wide.</div>
+  <div class="lines">
+    <div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div>
+    <div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div>
+  </div>
+
+  <div class="task"><strong>TASK B · </strong>From all your stakeholders, select the three most important or vital to your success.</div>
+  <div class="grid-3">
+    <div class="stake-box">
+      <label>Stakeholder 1</label>
+      <div class="name-line"></div>
+      <div class="desc-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </div>
+    <div class="stake-box">
+      <label>Stakeholder 2</label>
+      <div class="name-line"></div>
+      <div class="desc-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </div>
+    <div class="stake-box">
+      <label>Stakeholder 3</label>
+      <div class="name-line"></div>
+      <div class="desc-lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 NEEDS -->
+<section>
+  <h2>2 · Needs by Stakeholder</h2>
+  <div class="subtitle">Functional (do), Emotional (feel), Social (signal) needs across the top 3.</div>
+
+  <div class="needs-block">
+    <span class="label">Functional · what they need to DO</span>
+    <div class="needs-grid">
+      <div class="needs-col"><h5>Stakeholder 1</h5><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+      <div class="needs-col"><h5>Stakeholder 2</h5><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+      <div class="needs-col"><h5>Stakeholder 3</h5><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </div>
+  </div>
+
+  <div class="needs-block">
+    <span class="label">Emotional · what they need to FEEL</span>
+    <div class="needs-grid">
+      <div class="needs-col"><h5>Stakeholder 1</h5><div class="line"></div><div class="line"></div><div class="line"></div></div>
+      <div class="needs-col"><h5>Stakeholder 2</h5><div class="line"></div><div class="line"></div><div class="line"></div></div>
+      <div class="needs-col"><h5>Stakeholder 3</h5><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </div>
+  </div>
+
+  <div class="needs-block">
+    <span class="label">Social · what they need to SIGNAL</span>
+    <div class="needs-grid">
+      <div class="needs-col"><h5>Stakeholder 1</h5><div class="line"></div><div class="line"></div></div>
+      <div class="needs-col"><h5>Stakeholder 2</h5><div class="line"></div><div class="line"></div></div>
+      <div class="needs-col"><h5>Stakeholder 3</h5><div class="line"></div><div class="line"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 PURPOSE ARCHETYPE -->
+<section>
+  <h2>3 · Purpose Archetype</h2>
+  <div class="subtitle">Five ways a company makes the world better. Tick the one that fits best (and a secondary if useful).</div>
+
+  <div class="archetypes">
+    <div class="arch"><div class="check"></div><h5>Reduce Friction</h5><div class="ex">Google · Spotify</div></div>
+    <div class="arch"><div class="check"></div><h5>Foster Prosperity</h5><div class="ex">Pampers · Warby Parker</div></div>
+    <div class="arch"><div class="check"></div><h5>Enable Potential</h5><div class="ex">Tesla · Nike</div></div>
+    <div class="arch"><div class="check"></div><h5>Encourage Exploration</h5><div class="ex">Airbnb · Adobe</div></div>
+    <div class="arch"><div class="check"></div><h5>Kindle Happiness</h5><div class="ex">Dove · Zappos</div></div>
+  </div>
+
+  <div class="task"><strong>WHY · </strong>Why this archetype, not another? Write a real moment, a real customer, a real change you made for someone.</div>
+  <div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+</section>
+
+<!-- 4 PURPOSE LONG -->
+<section>
+  <h2>4 · Purpose Sentence · Long Form</h2>
+  <div class="subtitle">Fill each field. The whole thing should read as a coherent paragraph when assembled.</div>
+
+  <div class="field-row">
+    <div class="field">We exist to</div>
+    <div class="lines"><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="field-row">
+    <div class="field">by</div>
+    <div class="lines"><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="field-row">
+    <div class="field">For the good of</div>
+    <div class="lines"><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="field-row">
+    <div class="field">How this impacts the people we serve</div>
+    <div class="lines"><div class="line"></div><div class="line"></div></div>
+  </div>
+  <div class="field-row">
+    <div class="field">How we make money sustainably</div>
+    <div class="lines"><div class="line"></div><div class="line"></div></div>
+  </div>
+</section>
+
+<!-- 5 PURPOSE WORDS -->
+<section>
+  <h2>5 · Purpose Words</h2>
+  <div class="subtitle">20 to 35 words that describe how your brand is and acts. Circle the 5–8 most non-negotiable.</div>
+  <div class="word-grid">
+    <div class="word-line"></div><div class="word-line"></div><div class="word-line"></div><div class="word-line"></div><div class="word-line"></div>
+    <div class="word-line"></div><div class="word-line"></div><div class="word-line"></div><div class="word-line"></div><div class="word-line"></div>
+    <div class="word-line"></div><div class="word-line"></div><div class="word-line"></div><div class="word-line"></div><div class="word-line"></div>
+    <div class="word-line"></div><div class="word-line"></div><div class="word-line"></div><div class="word-line"></div><div class="word-line"></div>
+    <div class="word-line"></div><div class="word-line"></div><div class="word-line"></div><div class="word-line"></div><div class="word-line"></div>
+    <div class="word-line"></div><div class="word-line"></div><div class="word-line"></div><div class="word-line"></div><div class="word-line"></div>
+    <div class="word-line"></div><div class="word-line"></div><div class="word-line"></div><div class="word-line"></div><div class="word-line"></div>
+  </div>
+</section>
+
+<!-- 6 SHORT SENTENCE -->
+<section>
+  <h2>6 · Purpose Sentence · Short Form</h2>
+  <div class="subtitle">A 3–7-word version of your purpose. North star, not tagline. Write three candidates; circle the strongest.</div>
+  <div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+</section>
+
+<!-- 7 SUPERPOWER -->
+<section>
+  <h2>7 · Our Superpower</h2>
+  <div class="subtitle">The intersection of what the world needs, what you are gifted at, and what you love.</div>
+  <div class="super-grid">
+    <div class="col"><h5>What the world needs most</h5><div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="col"><h5>What we are uniquely gifted at</h5><div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="col"><h5>What we are passionate about</h5><div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+  </div>
+  <div class="task"><strong>SUPERPOWER · </strong>Write the intersection in one strong sentence.</div>
+  <div class="lines"><div class="line"></div><div class="line"></div></div>
+</section>
+
+<!-- 8 STRATEGIC CASCADE -->
+<section>
+  <h2>8 · Strategic Cascade</h2>
+  <div class="subtitle">Roger Martin & A.G. Lafley · <em>Playing to Win</em>. Five interlocking choices.</div>
+  <div class="cascade-grid">
+    <div class="col">
+      <h5>Winning Aspiration</h5>
+      <div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </div>
+    <div class="col">
+      <h5>Where to Play</h5>
+      <div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </div>
+    <div class="col">
+      <h5>How to Win</h5>
+      <div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </div>
+    <div class="col">
+      <h5>Capabilities</h5>
+      <div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </div>
+    <div class="col">
+      <h5>Management Systems</h5>
+      <div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 PILLARS -->
+<section>
+  <h2>9 · Strategic Pillars</h2>
+  <div class="subtitle">Three or four things you must keep doing to live the purpose. Each pillar gets a short name AND a one-sentence "what this looks like in practice."</div>
+  <div class="pillars-grid">
+    <div class="pillar-box"><div class="num">01</div><div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="pillar-box"><div class="num">02</div><div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="pillar-box"><div class="num">03</div><div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="pillar-box"><div class="num">04</div><div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+  </div>
+</section>
+
+<div class="footnote">
+  Brand Workshop · Printable Workbook · MIT-licensed open source.<br>
+  Adapted with credit from <strong>Barry Hillier</strong> (barryhillier.com) and <strong>Brian Hickling</strong> (Catalyst 17).
+  Strategic cascade from Roger Martin & A.G. Lafley, <em>Playing to Win</em>.
+  Optional Exercises 9 (Values) and 10 (Brand Movement) are available in the Claude Code skill.
+</div>
+
+</div>
+</body>
+</html>

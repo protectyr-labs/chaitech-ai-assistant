@@ -20,8 +20,9 @@ Total time: usually about ten minutes.
 
 No problem. Do this instead.
 
-- Open a [Discussion](https://github.com/protectyr-labs/chaitech-ai-assistant/discussions/new?category=ideas) in the "Ideas" category and paste what you built, or describe it in your own words, or attach a text file.
-- A steward will turn it into a proper helper, credit you as the idea author, and tell you when it is live.
+- **Already working?** Open a [Show and tell](https://github.com/protectyr-labs/chaitech-ai-assistant/discussions/new?category=show-and-tell) post and paste what you built, or describe it in your own words, or attach a text file. This is the friendliest place to start — it's literally for "I made a thing, look."
+- **Still rough or just an idea?** Open an [Ideas Discussion](https://github.com/protectyr-labs/chaitech-ai-assistant/discussions/new?category=ideas) instead.
+- Either way, a steward will turn it into a proper helper, credit you as the author, and tell you when it is live.
 
 You do not need a GitHub account to read the repo, but you do need one (free) to open a Discussion. Making an account takes two minutes. We promise.
 
@@ -84,4 +85,4 @@ Open a [Discussion in the Q and A category](https://github.com/protectyr-labs/ch
 
 ## Steward
 
-Alexander Madaniev, ChaiTech Cohort 7. Founding steward during Cohort 7.
+Sasha Madaniev, ChaiTech Cohort 7. Founding steward during Cohort 7.

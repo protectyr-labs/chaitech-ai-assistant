@@ -10,6 +10,14 @@
 
 If you have never touched GitHub, have no idea what "Claude Code" is, and only know that everyone keeps saying you should try AI in your business — you are in exactly the right place. This page was built for you.
 
+## Why this exists
+
+After the first Claude Code session in Cohort 7, a lot of us walked out with the same question — *"where do I actually find helpers I can use in my business tomorrow?"* — and no shared answer. So we started one. This repo is the answer growing in public: a few helpers cohort founders built for themselves, a short list of the best community helpers we found, and an open invitation to add yours.
+
+It belongs to the cohort. If you have a question, ask it here. If you have something that worked for you, share it here. The bar is "did it help me?" — that's it.
+
+> **What is Claude Code?** A free desktop app from Anthropic that lets you talk to Claude inside any folder on your computer. You type questions, it reads your files, and it can run "skills" — small helpers people have built for specific jobs (writing, planning, research, dashboards). The four helpers below are the ones we built first.
+
 ## Three things you can do here
 
 ![Learn](https://img.shields.io/badge/Learn-E8957F?style=for-the-badge&labelColor=3D3025) &nbsp; ![Use](https://img.shields.io/badge/Use-F5D77A?style=for-the-badge&labelColor=3D3025) &nbsp; ![Ask_and_Share](https://img.shields.io/badge/Ask_and_Share-C7A3D9?style=for-the-badge&labelColor=3D3025)
@@ -22,7 +30,7 @@ Jump to: [Where do I start? (for complete beginners)](#where-do-i-start-if-i-hav
 
 ### Use
 
-We include four ready-made helpers (the technical word is "skills") that cohort founders use in their own work. Each one is two copy-paste steps to install. Pick one, install it, and Claude starts doing that thing for you.
+We include five ready-made helpers (the technical word is "skills") that cohort founders use in their own work. Each one is two copy-paste steps to install. Pick one, install it, and Claude starts doing that thing for you.
 
 Jump to: [What is inside today](#what-is-inside-today)
 
@@ -38,7 +46,7 @@ Have a question you were embarrassed to ask in the group session? Ask it here. B
 
 ## What is inside today
 
-Four helpers live here right now. Each one is self-contained, free, and works without you signing up for anything extra.
+Five helpers live here right now. Each one is self-contained, free, and works without you signing up for anything extra.
 
 ### ![advisors](https://img.shields.io/badge/Advisors-E8957F?style=flat-square&labelColor=3D3025) &nbsp; Eight friendly advisors for your business
 
@@ -80,13 +88,23 @@ Right before you push your code to GitHub, this helper reviews your pending chan
 
 → [See how this works](skills/secure-before-push/)
 
+### ![brand](https://img.shields.io/badge/Brand-E8957F?style=flat-square&labelColor=3D3025) &nbsp; Find what your brand stands for
+
+<div align="center">
+<img src="docs/assets/skill-brand-workshop.svg" alt="Brand Workshop — fourteen guided exercises from blank page to a clean Brand DNA draft" width="85%"/>
+</div>
+
+Fourteen plain-language exercises that take you from "I don't know what my brand stands for" to a clean markdown draft you can hand to a designer, a strategist, or your next hire. Adapted with credit from the public Brand DNA workshop by Barry Hillier (Hillier Consulting) and Brian Hickling (Catalyst 17). About 90 minutes of focus, or two 45-minute sessions.
+
+→ [See how this works](skills/brand-workshop/)
+
 ---
 
 ## Where do I start if I have never done this before?
 
 Four gentle steps. Allow yourself an afternoon.
 
-1. **Install Claude Code.** It is free. [Download and install guide from Anthropic.](https://docs.anthropic.com/en/docs/claude-code/overview)
+1. **Install Claude Code.** It is free, made by Anthropic, and works on Mac, Windows, and Linux. [Download and install guide.](https://docs.anthropic.com/en/docs/claude-code/overview)
 2. **Pick one helper from above.** We recommend "Your day, bracketed" first. It is the smallest change and you will feel the benefit tomorrow morning.
 3. **Follow the two steps in that helper's page.** Copy, paste, done.
 4. **Come back with a question.** Open a Discussion or ask at the next cohort session. Both are fine.
@@ -100,6 +118,7 @@ If any of this feels like it is written in a language you do not speak, [open a 
 Not every useful thing is a Claude Code skill. Some are workbooks, templates, or printables that help you do the work of building a startup. Those live in `resources/`.
 
 - [Discovery Interview Workbook](resources/discovery-interview-workbook/) — printable HTML companion for Rob Kenedi's 40-interview customer discovery challenge. Verbatim script, branching scenarios for when calls go off-rails, pre-call briefing template, quick reference cards. Open in a browser, print for use during real calls.
+- [Brand Workshop](resources/brand-workshop/) — printable workbook, fictional filled example (Lumen Coffee Roasters), and a facilitator guide for cohort leads. Use alongside the [Brand Workshop skill](skills/brand-workshop/) or stand-alone for paper-first founders and live cohort sessions.
 
 → [Browse all resources](resources/)
 
@@ -127,13 +146,11 @@ You do not need to be a coder.
 
 ## A note from the steward
 
-Hi, I am Sasha Madaniev, a member of ChaiTech Cohort 7 and founder of Protectyr Security. I built this after the first Claude Code session our cohort had.
-
-Too many of us left that session with the same question, "where do I find practical helpers?", and no shared answer existed. So I started one.
+Hi, I am Sasha Madaniev — Cohort 7, founder of Protectyr Security. I'm the founding steward of this repo during Cohort 7.
 
 Today it lives on my Protectyr Labs portfolio. If ChaiTech decides to host it under the ChaiTech name, it moves. Either way, it belongs to the cohort founders who use it, contribute to it, and learn from each other through it.
 
-If something here feels confusing or wrong, tell me. I want this page to be friendly first and technical second.
+If something here feels confusing or wrong, tell me. I want this page to be friendly first and technical second. The fastest way to reach me is to [open a Discussion](https://github.com/protectyr-labs/chaitech-ai-assistant/discussions) — or grab me at the next cohort session.
 
 ---
 
