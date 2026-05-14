@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/assets/banner.svg" alt="ChaiTech AI Assistant — a friendly home for founders learning AI" width="100%"/>
+<img src="docs/assets/banner.svg" alt="ChaiTech AI Assistant, a friendly home for founders learning AI" width="100%"/>
 
 </div>
 
@@ -8,7 +8,7 @@
 
 > A friendly home for ChaiTech founders who want to use AI but do not know where to start.
 
-If you have never touched GitHub, have no idea what "Claude Code" is, and only know that everyone keeps saying you should try AI in your business — you are in exactly the right place. This page was built for you.
+If you have never touched GitHub, have no idea what "Claude Code" is, and only know that everyone keeps saying you should try AI in your business, you are in exactly the right place. This page was built for you.
 
 ## Three things you can do here
 
@@ -22,7 +22,7 @@ Jump to: [Where do I start? (for complete beginners)](#where-do-i-start-if-i-hav
 
 ### Use
 
-We include four ready-made helpers (the technical word is "skills") that cohort founders use in their own work. Each one is two copy-paste steps to install. Pick one, install it, and Claude starts doing that thing for you.
+We include five ready-made helpers (the technical word is "skills") that cohort founders use in their own work. Each one is two copy-paste steps to install. Pick one, install it, and Claude starts doing that thing for you.
 
 Jump to: [What is inside today](#what-is-inside-today)
 
@@ -38,7 +38,7 @@ Have a question you were embarrassed to ask in the group session? Ask it here. B
 
 ## What is inside today
 
-Four helpers live here right now. Each one is self-contained, free, and works without you signing up for anything extra.
+Five helpers live here right now. Each one is self-contained, free, and works without you signing up for anything extra.
 
 ### ![advisors](https://img.shields.io/badge/Advisors-E8957F?style=flat-square&labelColor=3D3025) &nbsp; Eight friendly advisors for your business
 
@@ -80,6 +80,19 @@ Right before you push your code to GitHub, this helper reviews your pending chan
 
 → [See how this works](skills/secure-before-push/)
 
+### ![brand](https://img.shields.io/badge/Brand-C7A3D9?style=flat-square&labelColor=3D3025) &nbsp; Find what your brand stands for
+
+<div align="center">
+<img src="docs/assets/skill-brand-workshop.svg" alt="An open workbook with completed exercises, surrounded by stakeholder, purpose, cascade, and values icons" width="85%"/>
+</div>
+
+Most founders freeze the first time they try to write a homepage. This helper walks you through fourteen short, guided conversations adapted from the public Brand DNA workshop by [Barry Hillier](https://www.barryhillier.com/) and [Brian Hickling](https://ca.linkedin.com/in/brianjhickling), the two advisors who taught Cohort 7's brand session. Stakeholders, purpose archetype, Roger Martin's strategic cascade, values, and ten more. You finish with a clean markdown draft you can hand to a designer, paste into a pitch, or take into [Find My Brand DNA](https://www.barryhillier.com/) for the deeper AI synthesis. Full credit on every page goes to Barry and Brian.
+
+> [!NOTE]
+> The Brand DNA method belongs to Barry Hillier and Brian Hickling. This skill is a drafting companion, not a replacement for their workshop or the *Find My Brand DNA* application. Use it to prepare your inputs offline, then take the draft into the deeper work.
+
+→ [See how this works](skills/brand-workshop/)
+
 ---
 
 ## Where do I start if I have never done this before?
@@ -99,7 +112,7 @@ If any of this feels like it is written in a language you do not speak, [open a 
 
 Not every useful thing is a Claude Code skill. Some are workbooks, templates, or printables that help you do the work of building a startup. Those live in `resources/`.
 
-- [Discovery Interview Workbook](resources/discovery-interview-workbook/) — printable HTML companion for Rob Kenedi's 40-interview customer discovery challenge. Verbatim script, branching scenarios for when calls go off-rails, pre-call briefing template, quick reference cards. Open in a browser, print for use during real calls.
+- [Discovery Interview Workbook](resources/discovery-interview-workbook/), a printable HTML companion for Rob Kenedi's 40-interview customer discovery challenge. Verbatim script, branching scenarios for when calls go off-rails, pre-call briefing template, quick reference cards. Open in a browser, print for use during real calls.
 
 → [Browse all resources](resources/)
 
@@ -138,6 +151,8 @@ If something here feels confusing or wrong, tell me. I want this page to be frie
 ---
 
 ## Credits
+
+[Barry Hillier](https://www.barryhillier.com/) and [Brian Hickling](https://ca.linkedin.com/in/brianjhickling), for the public Brand DNA workshop that the `brand-workshop` skill adapts with credit. Cohort 7 was the first time they layered AI education on top of the workshop, and this skill exists because of that integration. The deeper synthesis layers live inside their *Find My Brand DNA* application.
 
 Bryan Altman, for the session that made this idea obvious, and for the [claude-research-skill](https://github.com/altmbr/claude-research-skill) that is our first curated pick.
 
